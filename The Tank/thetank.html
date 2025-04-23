@@ -73,9 +73,9 @@ tw-passage {
   align-items: flex-start;
   position: relative;
   flex-direction: column;
-  padding: 0.5rem;
-  width: 95%;
-  margin: 1rem auto 2rem auto; /* less top margin */
+  padding: 1rem;
+  width: 90%;
+  margin: 2rem auto;
   text-align: left;
   min-height: 30rem;
 }
@@ -83,7 +83,7 @@ tw-passage {
 .big-brackets::before {
   content: "(";
   position: absolute;
-  left: -6rem;  /* pushed further left */
+  left: -3rem;
   top: 0rem;
   font-size: 8rem;
   transform: scaleX(0.6);
@@ -93,11 +93,20 @@ tw-passage {
 .big-brackets::after {
   content: ")";
   position: absolute;
-  right: -6rem;  /* pushed further right */
+  right: -3rem;
   bottom: -1rem;
   font-size: 8rem;
   transform: scaleX(0.6);
   font-family: 'Arial', sans-serif;
+}
+
+.dynamic-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .line {
@@ -150,31 +159,6 @@ tw-passage {
   margin-right: 2.5rem;
   max-width: 70%;
 }
-.dynamic-text {
-  font-family: 'CabrionLight', sans-serif;
-  font-size: 1rem;
-  color: #3C3633;
-  position: relative;
-  padding: 1rem;
-  margin: 0;
-}
-
-.line-1 {
-  margin-left: 10%;  /* Adjusted to shift right */
-}
-
-.line-2 {
-  margin-left: 15%;  /* Adjusted to shift more right */
-}
-
-.line-3 {
-  margin-left: 5%;  /* Slight shift */
-}
-
-.line-4 {
-  margin-left: 20%;  /* Further right shift for dynamic look */
-}
-
 /* Adjust these values incrementally for more varied alignment */
 
 /* Add these styles to the bottom of your existing stylesheet */
@@ -224,8 +208,7 @@ tw-passage {
 tw-passage {
   padding-bottom: 200px; /* Extra room for content at the bottom */
   overflow: auto; /* Allow scrolling if content overflows */
-}
-</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="600,250" size="100,100">&lt;audio id=&quot;background-audio&quot; loop autoplay&gt;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="600,250" size="100,100">&lt;audio id=&quot;background-audio&quot; loop autoplay&gt;
   &lt;source src=&quot;audio/Space8-NalaSinephro.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
   Your browser does not support the audio element.
 &lt;/audio&gt;
