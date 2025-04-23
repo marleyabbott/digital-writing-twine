@@ -176,6 +176,55 @@ tw-passage {
 }
 
 /* Adjust these values incrementally for more varied alignment */
+
+/* Add these styles to the bottom of your existing stylesheet */
+/* Grid container to hold all the grid items */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Auto-fill columns with minimum width */
+  gap: 20px; /* Space between grid items */
+  padding: 20px;
+  height: 100vh; /* Full height of the viewport */
+  box-sizing: border-box; /* Include padding in the total height calculation */
+}
+
+/* Grid item (image or text) */
+.grid-item {
+  display: flex;
+  flex-direction: column; /* Stack image and text vertically */
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Style for the images */
+.story-image {
+  width: 100%; /* Make images fill their container */
+  max-width: 100%;
+  max-height: 200px; /* Set a max height for consistency */
+  object-fit: cover; /* Keep aspect ratio and cover the space */
+  border-radius: 10px; /* Optional: rounded corners */
+}
+
+/* Styling for text */
+.text-item {
+  font-family: 'CabrionLight', sans-serif;
+  color: #3C3633;
+  text-align: center; /* Center text within the grid item */
+}
+
+.text-item p {
+  font-size: 1rem;
+  margin: 10px 0; /* Space between paragraphs */
+  line-height: 1.5;
+}
+
+/* Adjust grid container for responsive behavior */
+tw-passage {
+  padding-bottom: 200px; /* Extra room for content at the bottom */
+  overflow: auto; /* Allow scrolling if content overflows */
+}
 </style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="600,250" size="100,100">&lt;audio id=&quot;background-audio&quot; loop autoplay&gt;
   &lt;source src=&quot;audio/Space8-NalaSinephro.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
   Your browser does not support the audio element.
@@ -254,7 +303,7 @@ The bedroom that could fit the water tank inside of it maybe,
 
   /* Other styling for image grid, etc. */
 &lt;/style&gt;
-</tw-passagedata><tw-passagedata pid="6" name="Image test" tags="" position="725,750" size="100,100">&lt;img class=&quot;story-image&quot; src=&quot;./images/italy.jpeg&quot; alt=&quot;italy&quot; /&gt;
+</tw-passagedata><tw-passagedata pid="6" name="Image test" tags="" position="150,700" size="100,100">&lt;img class=&quot;story-image&quot; src=&quot;./images/italy.jpeg&quot; alt=&quot;italy&quot; /&gt;
 </tw-passagedata><tw-passagedata pid="7" name="Next Passage" tags="" position="600,750" size="100,100">&lt;div class=&quot;big-brackets&quot;&gt;
   &lt;div class=&quot;dynamic-text&quot;&gt;
     &lt;p class=&quot;line line-1&quot;&gt;A ring-shaped mosquito bite on your finger greets you in the morning.&lt;/p&gt;
@@ -264,7 +313,31 @@ The bedroom that could fit the water tank inside of it maybe,
     &lt;p class=&quot;line line-5&quot;&gt;The sun reaches into the story through the splinters. The peeling paint. The half-laid kitchen tile causing depressions in the floor.&lt;/p&gt;
     &lt;p class=&quot;line line-6&quot;&gt;The tile trailing off, somewhere we are supposed to walk.&lt;/p&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata></tw-storydata>
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="Untitled Passage" tags="" position="300,900" size="100,100">&lt;tw-passage&gt;
+  &lt;div class=&quot;grid-container&quot;&gt;
+    &lt;!-- Example Image 1 --&gt;
+    &lt;div class=&quot;grid-item image-item&quot;&gt;
+      &lt;img src=&quot;your-image-url.jpg&quot; class=&quot;story-image&quot; alt=&quot;Image description&quot;&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Example Text 1 --&gt;
+    &lt;div class=&quot;grid-item text-item&quot;&gt;
+      &lt;p class=&quot;line-1&quot;&gt;This is some text that will be aligned dynamically in the grid layout.&lt;/p&gt;
+      &lt;p class=&quot;line-2&quot;&gt;It will adjust to fit the space, with a responsive layout.&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Example Image 2 --&gt;
+    &lt;div class=&quot;grid-item image-item&quot;&gt;
+      &lt;img src=&quot;your-image-url2.jpg&quot; class=&quot;story-image&quot; alt=&quot;Image description&quot;&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Example Text 2 --&gt;
+    &lt;div class=&quot;grid-item text-item&quot;&gt;
+      &lt;p class=&quot;line-1&quot;&gt;Here&#39;s more text to follow the same dynamic structure.&lt;/p&gt;
+      &lt;p class=&quot;line-2&quot;&gt;It will also adjust based on screen size, making sure everything looks neat.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/tw-passage&gt;</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
