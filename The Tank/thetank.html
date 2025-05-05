@@ -217,20 +217,21 @@ tw-story[tags~="background1"] {
 .image-text-container {
   display: flex;                /* Align image and text side by side */
   align-items: flex-start;      /* Align both items at the top */
-  gap: 2rem;                    /* Add space between image and text */
+  gap: 2rem;                    /* Space between image and text */
   padding: 1rem;
   max-width: 90%;
-  margin: 2rem auto;
+  margin: 2rem auto;            /* Center the entire container */
   flex-wrap: nowrap;            /* Prevent wrapping */
 }
 
-/* Set the image size */
+/* Increase the size and move the image further left */
 .side-image {
-  width: 400px;                 /* Adjust the image width */
-  height: auto;                 /* Keep the aspect ratio */
-  object-fit: cover;            /* Ensure image covers its box without distortion */
-  flex-shrink: 0;               /* Prevent shrinking */
+  width: 600px;                 /* Increase image width */
+  height: auto;                 /* Maintain aspect ratio */
+  object-fit: cover;            /* Ensure the image covers its box */
+  flex-shrink: 0;               /* Prevent image from shrinking */
   border-radius: 10px;          /* Optional: rounded corners */
+  margin-left: -50px;           /* Move the image further left */
 }
 
 /* Make the text block flexible */
