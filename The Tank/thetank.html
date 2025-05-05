@@ -213,26 +213,27 @@ tw-passage {
 tw-story[tags~="background1"] {
   background: url('images/tapestry.jpg') center center / cover no-repeat fixed;
 }
+/* Ensure the container holds both image and text side-by-side */
 .image-text-container {
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
+  display: flex;                   /* Use flex to align items horizontally */
+  align-items: flex-start;         /* Align items to the top */
+  gap: 2rem;                       /* Space between image and text */
   padding: 1rem;
   max-width: 90%;
   margin: 2rem auto;
-  flex-wrap: wrap;
+  flex-wrap: wrap;                 /* Allow the items to wrap on smaller screens */
 }
 
 .side-image {
-  width: 400px;           
-  height: auto;          
-  border-radius: 10px;    
-  object-fit: cover;      
-  flex-shrink: 0;
+  width: 600px;                    /* Increase image width for a larger size */
+  height: auto;                    /* Maintain aspect ratio */
+  border-radius: 10px;             /* Optional: rounded corners */
+  object-fit: cover;               /* Ensure image covers the container proportionally */
+  flex-shrink: 0;                  /* Prevent the image from shrinking */
 }
 
 .text-block {
-  flex: 1;
+  flex: 1;                         /* Allow the text to fill remaining space */
   font-family: 'CabrionLight', sans-serif;
   color: #3C3633;
   line-height: 1.6;
