@@ -159,20 +159,16 @@ tw-passage {
   margin-right: 2.5rem;
   max-width: 70%;
 }
-/* Adjust these values incrementally for more varied alignment */
 
-/* Add these styles to the bottom of your existing stylesheet */
-/* Grid container to hold all the grid items */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Auto-fill columns with minimum width */
-  gap: 20px; /* Space between grid items */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+  gap: 20px; 
   padding: 20px;
-  height: 100vh; /* Full height of the viewport */
-  box-sizing: border-box; /* Include padding in the total height calculation */
+  height: 100vh; 
+  box-sizing: border-box; 
 }
 
-/* Grid item (image or text) */
 .grid-item {
   display: flex;
   flex-direction: column; /* Stack image and text vertically */
@@ -182,32 +178,29 @@ tw-passage {
   box-sizing: border-box;
 }
 
-/* Style for the images */
 .story-image {
-  width: 100%; /* Make images fill their container */
+  width: 100%; 
   max-width: 100%;
-  max-height: 200px; /* Set a max height for consistency */
-  object-fit: cover; /* Keep aspect ratio and cover the space */
-  border-radius: 10px; /* Optional: rounded corners */
+  max-height: 200px; 
+  object-fit: cover; 
+  border-radius: 10px; 
 }
 
-/* Styling for text */
 .text-item {
   font-family: 'CabrionLight', sans-serif;
   color: #3C3633;
-  text-align: center; /* Center text within the grid item */
+  text-align: center; 
 }
 
 .text-item p {
   font-size: 1rem;
-  margin: 10px 0; /* Space between paragraphs */
+  margin: 10px 0; 
   line-height: 1.5;
 }
 
-/* Adjust grid container for responsive behavior */
 tw-passage {
-  padding-bottom: 200px; /* Extra room for content at the bottom */
-  overflow: auto; /* Allow scrolling if content overflows */
+  padding-bottom: 200px; 
+  overflow: auto; 
 }
 
 tw-story[tags~="background1"] {
@@ -225,13 +218,13 @@ tw-story[tags~="background1"] {
 }
 
 .side-image {
-  width: 350px;  /* Make the image slightly bigger */
+  width: 350px; 
   max-width: 100%;
   border-radius: 10px;
   object-fit: cover;
   flex-shrink: 0;
-  margin-left: -100px; /* Move the image further to the left */
-  margin-top: 40px; /* Move the image further down */
+  margin-left: -100px; 
+  margin-top: 40px; 
 }
 
 .text-block {
@@ -257,11 +250,14 @@ tw-story[tags~="background1"] {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
-.bold-link {
-  color: #3C3633;
-  font-weight: bold;
-  text-decoration: none;
-  cursor: pointer;
+tw-link,
+tw-link:link,
+tw-link:visited,
+tw-link.visited,
+tw-link[click-append] {
+  color: #3C3633 !important;
+  font-weight: bold !important;
+  text-decoration: none !important;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="600,100" size="100,100">&lt;audio id=&quot;background-audio&quot; loop autoplay&gt;
   &lt;source src=&quot;audio/Space8-NalaSinephro.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
   Your browser does not support the audio element.
@@ -284,13 +280,8 @@ You and your sister sit up in bed.</tw-passagedata><tw-passagedata pid="2" name=
   &lt;/div&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="3" name="bed" tags="" position="600,725" size="100,100">In your proper bedroom with the slated roof and the insulated walls, you could imagine many places better to live than a water tank.
 
-The bedroom that could fit the water tank inside of it 
-(click: &quot;maybe,&quot;)[
-  (replace: ?maybe)[&lt;span class=&quot;bold-link&quot;&gt;maybe,&lt;/span&gt;]
-  (append: ?after-maybe)[[[if you could measure the parameters.]]]
-]
-&lt;span ?maybe&gt;&lt;tw-link&gt;maybe,&lt;/tw-link&gt;&lt;/span&gt;&lt;span ?after-maybe&gt;&lt;/span&gt;
-</tw-passagedata><tw-passagedata pid="4" name="if you could measure the parameters." tags="" position="600,850" size="100,100">|fadeOut&gt;[&lt;span class=&quot;fade-target&quot;&gt;You walk the parameters of the story, graze your hand on the corrugated iron edges.&lt;/span&gt;]
+The bedroom that could fit the water tank inside of it maybe, 
+(click-append: &quot;maybe,&quot;)[ [[if you could measure the parameters.]] ]</tw-passagedata><tw-passagedata pid="4" name="if you could measure the parameters." tags="" position="600,850" size="100,100">|fadeOut&gt;[&lt;span class=&quot;fade-target&quot;&gt;You walk the parameters of the story, graze your hand on the corrugated iron edges.&lt;/span&gt;]
 
 (after: 2s)[
   (enchant: ?fadeOut, (css: &quot;animation: fadeOut 3s ease forwards;&quot;))
@@ -403,7 +394,7 @@ The bedroom that could fit the water tank inside of it
 
 (after: 10s)[
   (goto: &quot;bed&quot;)
-]</tw-passagedata><tw-passagedata pid="11" name="[if you could measure the parameters." tags="" position="725,850" size="100,100"></tw-passagedata></tw-storydata>
+]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
