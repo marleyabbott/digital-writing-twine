@@ -241,34 +241,21 @@ tw-story[tags~="background1"] {
   line-height: 1.6;
   text-align: left;            
 }
-.fade-flicker-screen {
+.slow-fade-screen {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   background-color: black;
-  animation: flickerThenFade 4s forwards;
+  animation: slowFadeToBlack 4s forwards;
   z-index: 9999;
   pointer-events: none;
 }
 
-@keyframes flickerThenFade {
+@keyframes slowFadeToBlack {
   0% { opacity: 0; }
-  5% { opacity: 0.2; }
-  10% { opacity: 0.6; }
-  15% { opacity: 0.1; }
-  20% { opacity: 0.4; }
-  25% { opacity: 0.15; }
-  30% { opacity: 0.5; }
-  40% { opacity: 0.2; }
-  50% { opacity: 0.4; }
-  60% { opacity: 0.5; }
-  70% { opacity: 0.6; }
-  80% { opacity: 0.7; }
-  90% { opacity: 0.85; }
   100% { opacity: 1; }
-} { opacity: 0.15; }
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="600,100" size="100,100">&lt;audio id=&quot;background-audio&quot; loop autoplay&gt;
   &lt;source src=&quot;audio/Space8-NalaSinephro.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
   Your browser does not support the audio element.
@@ -391,23 +378,16 @@ The bedroom that could fit the water tank inside of it maybe,
 &lt;/div&gt;
 
 </tw-passagedata><tw-passagedata pid="10" name="They slept on piles of clothes instead of a bed" tags="" position="600,600" size="100,100">&lt;div class=&quot;image-text-container&quot;&gt;
-  &lt;img src=&quot;images/tankbottle.jpg&quot; alt=&quot;Old water tank&quot; class=&quot;side-image&quot; /&gt;
-  &lt;div class=&quot;text-block&quot;&gt;
-    &lt;p&gt;No fridge to store food, they only ate shelf-staple food. On the one day your Nonno splashed out and bought meat, your Nonna ruined the dish because she couldn’t read English on the bottle labelled, ‘sweet and sour sauce’.&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;image-text-container&quot;&gt;
   &lt;img src=&quot;images/tanksauce.jpg&quot; alt=&quot;Old water tank&quot; class=&quot;side-image&quot; /&gt;
   &lt;div class=&quot;text-block&quot;&gt;
     &lt;p&gt;No fridge to store food, they only ate shelf-staple food. On the one day your Nonno splashed out and bought meat, your Nonna ruined the dish because she couldn’t read English on the bottle labelled, ‘sweet and sour sauce’.&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
-|flicker&gt;[ ]
+|fade&gt;[ ]
 
 (after: 6s)[
-  (replace: ?flicker)[&lt;div class=&quot;fade-flicker-screen&quot;&gt;&lt;/div&gt;]
+  (replace: ?fade)[&lt;div class=&quot;slow-fade-screen&quot;&gt;&lt;/div&gt;]
 ]
 
 (after: 10s)[
