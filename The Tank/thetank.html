@@ -213,34 +213,32 @@ tw-passage {
 tw-story[tags~="background1"] {
   background: url('images/tapestry.jpg') center center / cover no-repeat fixed;
 }
-/* Make sure the container uses flexbox for side-by-side layout */
+
 .image-text-container {
-  display: flex;                /* Align image and text side by side */
-  align-items: flex-start;      /* Align both items at the top */
-  gap: 2rem;                    /* Space between image and text */
+  display: flex;               
+  align-items: flex-start;      
+  gap: 2rem;                    
   padding: 1rem;
   max-width: 90%;
-  margin: 2rem auto;            /* Center the entire container */
-  flex-wrap: nowrap;            /* Prevent wrapping */
+  margin: 2rem auto;            
+  flex-wrap: nowrap;           
 }
 
-/* Increase the size and move the image further left */
 .side-image {
-  width: 600px;                 /* Increase image width */
-  height: auto;                 /* Maintain aspect ratio */
-  object-fit: cover;            /* Ensure the image covers its box */
-  flex-shrink: 0;               /* Prevent image from shrinking */
-  border-radius: 10px;          /* Optional: rounded corners */
-  margin-left: -50px;           /* Move the image further left */
+  width: 250px;  
+  max-width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+  margin-left: -50px; 
 }
 
-/* Make the text block flexible */
 .text-block {
-  flex: 1;                      /* Allow the text to fill the remaining space */
+  flex: 1;                   
   font-family: 'CabrionLight', sans-serif;
   color: #3C3633;
   line-height: 1.6;
-  text-align: left;             /* Ensure text alignment to the left */
+  text-align: left;            
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="600,250" size="100,100">&lt;audio id=&quot;background-audio&quot; loop autoplay&gt;
   &lt;source src=&quot;audio/Space8-NalaSinephro.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
   Your browser does not support the audio element.
