@@ -248,19 +248,17 @@ tw-story[tags~="background1"] {
   width: 100vw;
   height: 100vh;
   background-color: black;
-  animation: flickerFlash 2s;
+  animation: softFlicker 2s;
   z-index: 9999;
+  pointer-events: none;
 }
 
-@keyframes flickerFlash {
+@keyframes softFlicker {
   0% { opacity: 0; }
-  10% { opacity: 1; }
-  20% { opacity: 0; }
-  30% { opacity: 1; }
-  40% { opacity: 0; }
-  50% { opacity: 1; }
-  60% { opacity: 0; }
-  100% { opacity: 1; }
+  25% { opacity: 0.1; }
+  50% { opacity: 0.2; }
+  75% { opacity: 0.05; }
+  100% { opacity: 0.15; }
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="600,100" size="100,100">&lt;audio id=&quot;background-audio&quot; loop autoplay&gt;
   &lt;source src=&quot;audio/Space8-NalaSinephro.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
   Your browser does not support the audio element.
@@ -389,9 +387,13 @@ The bedroom that could fit the water tank inside of it maybe,
   &lt;/div&gt;
 &lt;/div&gt;
 
-|flicker&gt;[&lt;div class=&quot;flicker-screen&quot;&gt;&lt;/div&gt;]
+|flicker&gt;[ ]
 
-(after: 2s)[
+(after: 6s)[
+  (replace: ?flicker)[&lt;div class=&quot;flicker-screen&quot;&gt;&lt;/div&gt;]
+]
+
+(after: 8s)[
   (goto: &quot;bed&quot;)
 ]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
