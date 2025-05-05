@@ -213,30 +213,33 @@ tw-passage {
 tw-story[tags~="background1"] {
   background: url('images/tapestry.jpg') center center / cover no-repeat fixed;
 }
-/* Ensure the container holds both image and text side-by-side */
+/* Make sure the container uses flexbox for side-by-side layout */
 .image-text-container {
-  display: flex;                   /* Use flex to align items horizontally */
-  align-items: flex-start;         /* Align items to the top */
-  gap: 2rem;                       /* Space between image and text */
+  display: flex;                /* Align image and text side by side */
+  align-items: flex-start;      /* Align both items at the top */
+  gap: 2rem;                    /* Add space between image and text */
   padding: 1rem;
   max-width: 90%;
   margin: 2rem auto;
-  flex-wrap: wrap;                 /* Allow the items to wrap on smaller screens */
+  flex-wrap: nowrap;            /* Prevent wrapping */
 }
 
+/* Set the image size */
 .side-image {
-  width: 600px;                    /* Increase image width for a larger size */
-  height: auto;                    /* Maintain aspect ratio */
-  border-radius: 10px;             /* Optional: rounded corners */
-  object-fit: cover;               /* Ensure image covers the container proportionally */
-  flex-shrink: 0;                  /* Prevent the image from shrinking */
+  width: 400px;                 /* Adjust the image width */
+  height: auto;                 /* Keep the aspect ratio */
+  object-fit: cover;            /* Ensure image covers its box without distortion */
+  flex-shrink: 0;               /* Prevent shrinking */
+  border-radius: 10px;          /* Optional: rounded corners */
 }
 
+/* Make the text block flexible */
 .text-block {
-  flex: 1;                         /* Allow the text to fill remaining space */
+  flex: 1;                      /* Allow the text to fill the remaining space */
   font-family: 'CabrionLight', sans-serif;
   color: #3C3633;
   line-height: 1.6;
+  text-align: left;             /* Ensure text alignment to the left */
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="600,250" size="100,100">&lt;audio id=&quot;background-audio&quot; loop autoplay&gt;
   &lt;source src=&quot;audio/Space8-NalaSinephro.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
   Your browser does not support the audio element.
