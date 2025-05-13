@@ -535,21 +535,21 @@ The bedroom that could fit the water tank inside of it maybe,
 
 &lt;span class=&quot;falling-text&quot; style=&quot;--random-x: _x; animation-delay: _delay + s;&quot;&gt;
   _text
-&lt;/span&gt;</tw-passagedata><tw-passagedata pid="16" name="messy table" tags="backgroundimage3" position="300,1125" size="100,100">&lt;!-- Create an array of image filenames --&gt;
+&lt;/span&gt;</tw-passagedata><tw-passagedata pid="16" name="messy table" tags="backgroundimage3" position="300,1125" size="100,100">&lt;!-- Define an array of image filenames --&gt;
 (set: $images to (array: &quot;letter.jpg&quot;, &quot;family.jpg&quot;, &quot;photo3.png&quot;, &quot;ticket.png&quot;, &quot;postcard.jpg&quot;))
 
 &lt;!-- Initialize an empty string for the collage --&gt;
 (set: $collage to &quot;&quot;)
 
 &lt;!-- Loop through each image in the array --&gt;
-(for: _i, _image, (0) to (length: $images) - 1)[
+(for: _i, 0, (array: $images) - 1)[
     &lt;!-- Set random values for position and rotation --&gt;
     (set: _x to (random: 0, 90))
     (set: _y to (random: 0, 90))
     (set: _r to (random: -30, 30))
 
     &lt;!-- Add the image HTML with the random styles --&gt;
-    (set: $collage to $collage + &quot;&lt;img src=&#39;images/&quot; + (either: _image) + &quot;&#39; class=&#39;scrap-img&#39; style=&#39;top:&quot; + _y + &quot;%; left:&quot; + _x + &quot;%; transform: rotate(&quot; + _r + &quot;deg);&#39;&gt;&quot;)
+    (set: $collage to $collage + &quot;&lt;img src=&#39;images/&quot; + (either: _i, $images) + &quot;&#39; class=&#39;scrap-img&#39; style=&#39;top:&quot; + _y + &quot;%; left:&quot; + _x + &quot;%; transform: rotate(&quot; + _r + &quot;deg);&#39;&gt;&quot;)
 ]
 
 &lt;!-- Display the collage --&gt;
