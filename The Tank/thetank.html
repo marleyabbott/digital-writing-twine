@@ -497,17 +497,65 @@ The bedroom that could fit the water tank inside of it maybe,
 
 &lt;!-- Container for the falling text --&gt;
 &lt;div id=&quot;falling-container&quot;&gt;
-  (for: each _line, ...$lines)[
-    &lt;!-- Inside the loop, generate random values for position and delay --&gt;
-    (set: _x to (random: 0, 100) / 100) &lt;!-- Random X position --&gt;
-    (set: _delay to (random: 0, 4)) &lt;!-- Random delay --&gt;
+  &lt;!-- Line 1 --&gt;
+  (set: _x to (random: 0, 100) / 100)
+  (set: _delay to (random: 0, 4))
+  &lt;span class=&quot;falling-text&quot; style=&quot;position: absolute; left: calc(10% + 80% * _x); animation-delay: _delay s;&quot;&gt;
+    (print: $lines[0])
+  &lt;/span&gt;
 
-    &lt;!-- Insert a span for each line --&gt;
-    &lt;span class=&quot;falling-text&quot; style=&quot;position: absolute; left: calc(10% + 80% * _x); animation-delay: _delay s;&quot;&gt;
-      _line
-    &lt;/span&gt;
-  ]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="Bile tainted with track changes" tags="" position="600,1100" size="100,100">[[next passage]]</tw-passagedata><tw-passagedata pid="14" name="a ring shaped mosquito bite greets you in the morning" tags="" position="600,1350" size="100,100"></tw-passagedata><tw-passagedata pid="15" name="falling line" tags="" position="725,975" size="100,100">(set: _text to _args[1])
+  &lt;!-- Line 2 --&gt;
+  (set: _x to (random: 0, 100) / 100)
+  (set: _delay to (random: 0, 4))
+  &lt;span class=&quot;falling-text&quot; style=&quot;position: absolute; left: calc(10% + 80% * _x); animation-delay: _delay s;&quot;&gt;
+    (print: $lines[1])
+  &lt;/span&gt;
+
+  &lt;!-- Line 3 --&gt;
+  (set: _x to (random: 0, 100) / 100)
+  (set: _delay to (random: 0, 4))
+  &lt;span class=&quot;falling-text&quot; style=&quot;position: absolute; left: calc(10% + 80% * _x); animation-delay: _delay s;&quot;&gt;
+    (print: $lines[2])
+  &lt;/span&gt;
+
+  &lt;!-- Continue this for each line --&gt;
+  (set: _x to (random: 0, 100) / 100)
+  (set: _delay to (random: 0, 4))
+  &lt;span class=&quot;falling-text&quot; style=&quot;position: absolute; left: calc(10% + 80% * _x); animation-delay: _delay s;&quot;&gt;
+    (print: $lines[3])
+  &lt;/span&gt;
+
+  (set: _x to (random: 0, 100) / 100)
+  (set: _delay to (random: 0, 4))
+  &lt;span class=&quot;falling-text&quot; style=&quot;position: absolute; left: calc(10% + 80% * _x); animation-delay: _delay s;&quot;&gt;
+    (print: $lines[4])
+  &lt;/span&gt;
+
+  (set: _x to (random: 0, 100) / 100)
+  (set: _delay to (random: 0, 4))
+  &lt;span class=&quot;falling-text&quot; style=&quot;position: absolute; left: calc(10% + 80% * _x); animation-delay: _delay s;&quot;&gt;
+    (print: $lines[5])
+  &lt;/span&gt;
+
+  (set: _x to (random: 0, 100) / 100)
+  (set: _delay to (random: 0, 4))
+  &lt;span class=&quot;falling-text&quot; style=&quot;position: absolute; left: calc(10% + 80% * _x); animation-delay: _delay s;&quot;&gt;
+    (print: $lines[6])
+  &lt;/span&gt;
+
+  (set: _x to (random: 0, 100) / 100)
+  (set: _delay to (random: 0, 4))
+  &lt;span class=&quot;falling-text&quot; style=&quot;position: absolute; left: calc(10% + 80% * _x); animation-delay: _delay s;&quot;&gt;
+    (print: $lines[7])
+  &lt;/span&gt;
+
+  (set: _x to (random: 0, 100) / 100)
+  (set: _delay to (random: 0, 4))
+  &lt;span class=&quot;falling-text&quot; style=&quot;position: absolute; left: calc(10% + 80% * _x); animation-delay: _delay s;&quot;&gt;
+    (print: $lines[8])
+  &lt;/span&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="13" name="Bile tainted with track changes" tags="" position="600,1100" size="100,100">[[next passage]]</tw-passagedata><tw-passagedata pid="14" name="a ring shaped mosquito bite greets you in the morning" tags="" position="600,1350" size="100,100"></tw-passagedata><tw-passagedata pid="15" name="falling line" tags="" position="725,975" size="100,100">(set: _text to _args[1])
 (set: _x to _args[2])
 (set: _delay to _args[3])
 
