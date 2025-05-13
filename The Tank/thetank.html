@@ -264,81 +264,29 @@ tw-sidebar [role=button] {
   opacity: 1 !important;
   color: #3C3633 !important; /* Optional: match your text color */
 }
-
-/* Image-text container for side-by-side layout */
-.image-text-container {
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-  padding: 1rem;
-  max-width: 90%;
-  margin: 2rem auto;
-  flex-wrap: nowrap; /* Prevent wrapping */
-}
-
-/* Image styles */
-.side-image {
-  width: 350px;
-  max-width: 100%;
-  border-radius: 10px;
-  object-fit: cover;
-  flex-shrink: 0; /* Prevent the image from shrinking */
-  margin-left: -100px; 
-  margin-top: 40px;
-}
-
-/* Text block styles */
-.text-block {
-  flex: 1;
-  font-family: 'CabrionLight', sans-serif;
-  color: #3C3633;
-  line-height: 1.6;
-  text-align: left;
-}
-
-/* Update to dynamic text container for correct alignment */
-.dynamic-text {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: space-between; /* Ensure space between text blocks */
-  width: 100%; /* Ensure it takes the full width of the container */
-}
-
-/* Adjust line classes to stagger them */
-.line {
-  font-size: 1rem;
-  color: #3C3633;
-  font-family: 'CabrionLight', sans-serif;
-  margin: 0;
-  line-height: 1.4;
-  text-align: left;
-  max-width: 45%;
-}
-
-/* Adjust individual line positioning */
-.line-1, .line-3, .line-5, .line-7 {
-  order: 1; /* Move these to the left side */
-}
-
-.line-2, .line-4, .line-6, .line-8 {
-  order: 2; /* Move these to the right side */
-}
-
-/* Image styles in dynamic layout */
 .inter-text-image {
-  width: 45%;
-  max-width: 350px;
+  width: 50%;
+  max-width: 400px;
   margin: 2rem 0;
-  border-radius: 0;
+  border-radius: 0; /* No rounded corners */
+  display: block;
   object-fit: cover;
-  box-shadow: none;
-  transform: rotate(-1deg); /* Adds slight rotation for a dynamic feel */
+  box-shadow: none; /* Remove shadow */
+
+  /* Dynamic layout look */
+  transform: rotate(-1deg);
 }
 
-/* Alternating image rotation */
 .inter-text-image:nth-of-type(2n) {
-  transform: rotate(1deg); /* Adds a slight rotation to alternate images */
+  align-self: flex-start;
+  margin-left: 3rem;
+  transform: rotate(2deg);
+}
+
+.inter-text-image:nth-of-type(2n+1) {
+  align-self: flex-end;
+  margin-right: 3rem;
+  transform: rotate(-2deg);
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="600,100" size="100,100">&lt;audio id=&quot;background-audio&quot; loop autoplay&gt;
   &lt;source src=&quot;audio/Space8-NalaSinephro.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
   Your browser does not support the audio element.
@@ -415,7 +363,7 @@ The bedroom that could fit the water tank inside of it maybe,
 
   /* Other styling for image grid, etc. */
 &lt;/style&gt;
-</tw-passagedata><tw-passagedata pid="6" name="Next Passage" tags="" position="600,975" size="100,100">&lt;div class=&quot;big-brackets clean-passage&quot;&gt;
+</tw-passagedata><tw-passagedata pid="6" name="Next Passage" tags="" position="600,975" size="100,100">&lt;div class=&quot;big-brackets&quot;&gt;
   &lt;div class=&quot;dynamic-text&quot;&gt;
     &lt;p class=&quot;line line-1&quot;&gt;[[A ring-shaped mosquito bite on your finger greets you in the morning]].&lt;/p&gt;
 
@@ -431,7 +379,7 @@ The bedroom that could fit the water tank inside of it maybe,
 
     &lt;p class=&quot;line line-5&quot;&gt;The light on your arms is warm. You can smell the eucalyptus in the air, and the detergent in the fabric.&lt;/p&gt;
 
-    &lt;img src=&quot;images/letter.jpg&quot; class=&quot;inter-text-image&quot;&gt;
+    &lt;img src=&quot;images/plant.jpg&quot; class=&quot;inter-text-image&quot;&gt;
 
     &lt;p class=&quot;line line-6&quot;&gt;Folding the clothes feels euphoric.&lt;/p&gt;
 
