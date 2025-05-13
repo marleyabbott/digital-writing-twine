@@ -472,7 +472,11 @@ The bedroom that could fit the water tank inside of it maybe,
     &lt;p class=&quot;line line-5&quot;&gt;The sun reaches into the story through the splinters. The peeling paint. The half-laid kitchen tile causing depressions in the floor.&lt;/p&gt;
     &lt;p class=&quot;line line-6&quot;&gt;The tile trailing off, somewhere we are supposed to walk.&lt;/p&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="arrive in calabria" tags="background2" position="600,975" size="100,100">&lt;!-- Define the lines of text --&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="arrive in calabria" tags="background2" position="600,975" size="100,100">&lt;!-- Precompute random X positions and delays for each line --&gt;
+(set: $randomX to (for: each _line, ...$lines)[(random: 0, 100) / 100]) 
+(set: $randomDelays to (for: each _line, ...$lines)[(random: 0, 4)])
+
+&lt;!-- Define the lines of text --&gt;
 (set: $lines to [
   &quot;On the first night there is vomit.&quot;,
   &quot;Before the vomit she talks at you in the language you have pretended to understand...&quot;,
@@ -485,18 +489,15 @@ The bedroom that could fit the water tank inside of it maybe,
   &quot;&#39;&#39;Bile tainted with track changes&#39;&#39;&quot;
 ])
 
-&lt;!-- Precompute random values for X positions and delays --&gt;
-(set: $randomX to (for: each _line, ...$lines)[(random: 0, 100)])  &lt;!-- X positions --&gt;
-(set: $randomDelays to (for: each _line, ...$lines)[(random: 0, 4)])  &lt;!-- Delays --&gt;
-
-&lt;!-- Loop through each line and create falling text --&gt;
+&lt;!-- Create the falling text container --&gt;
 &lt;div id=&quot;falling-container&quot;&gt;
   (for: each _line, _index, ...$lines)[
-    (set: _x to (either: $randomX[_index])) &lt;!-- X position --&gt;
-    (set: _delay to (either: $randomDelays[_index])) &lt;!-- Delay --&gt;
-
+    &lt;!-- Set the random X position and delay for each line --&gt;
+    (set: _x to $randomX[_index]) &lt;!-- Get random X position from precomputed values --&gt;
+    (set: _delay to $randomDelays[_index]) &lt;!-- Get random delay from precomputed values --&gt;
+    
     &lt;!-- Create the falling-text span for each line --&gt;
-    &lt;span class=&quot;falling-text&quot; style=&quot;left: calc(10% + 80% * _x); animation-delay: _delay s;&quot;&gt;
+    &lt;span class=&quot;falling-text&quot; style=&quot;position: absolute; left: calc(10% + 80% * _x); animation-delay: _delay s;&quot;&gt;
       _line
     &lt;/span&gt;
   ]
