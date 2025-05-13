@@ -263,6 +263,15 @@ tw-sidebar [role=button] {
   visibility: visible !important;
   opacity: 1 !important;
   color: #3C3633 !important; /* Optional: match your text color */
+}
+.inter-text-image {
+  width: 60%;
+  max-width: 500px;
+  margin: 1rem auto;
+  border-radius: 12px;
+  display: block;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="600,100" size="100,100">&lt;audio id=&quot;background-audio&quot; loop autoplay&gt;
   &lt;source src=&quot;audio/Space8-NalaSinephro.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
   Your browser does not support the audio element.
@@ -339,13 +348,24 @@ The bedroom that could fit the water tank inside of it maybe,
 
   /* Other styling for image grid, etc. */
 &lt;/style&gt;
-</tw-passagedata><tw-passagedata pid="6" name="Next Passage" tags="background1" position="600,1000" size="100,100">&lt;div class=&quot;big-brackets&quot;&gt;
+</tw-passagedata><tw-passagedata pid="6" name="Next Passage" tags="" position="600,975" size="100,100">&lt;div class=&quot;big-brackets&quot;&gt;
   &lt;div class=&quot;dynamic-text&quot;&gt;
     &lt;p class=&quot;line line-1&quot;&gt;[[A ring-shaped mosquito bite on your finger greets you in the morning]].&lt;/p&gt;
+    
+    &lt;img src=&quot;images/mosquito.jpg&quot; class=&quot;inter-text-image&quot;&gt;
+
     &lt;p class=&quot;line line-2&quot;&gt;She wears a scarf tight around her skull as she washes the dishes.&lt;/p&gt;
+
     &lt;p class=&quot;line line-3&quot;&gt;You collect the clean laundry from the balcony rail.&lt;/p&gt;
+
+    &lt;img src=&quot;images/laundry.jpg&quot; class=&quot;inter-text-image&quot;&gt;
+
     &lt;p class=&quot;line line-4&quot;&gt;Is it the heat or break from idling hands raised above the keyboard in contemplation that makes folding the clothes feel euphoric?&lt;/p&gt;
+
     &lt;p class=&quot;line line-5&quot;&gt;The sun reaches into the story through the splinters. The peeling paint. The half-laid kitchen tile causing depressions in the floor.&lt;/p&gt;
+
+    &lt;img src=&quot;images/kitchen-tile.jpg&quot; class=&quot;inter-text-image&quot;&gt;
+
     &lt;p class=&quot;line line-6&quot;&gt;The tile trailing off, somewhere we are supposed to walk.&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="7" name="Untitled Passage" tags="" position="300,900" size="100,100">&lt;tw-passage&gt;
@@ -399,7 +419,16 @@ The bedroom that could fit the water tank inside of it maybe,
 
 (after: 10s)[
   (goto: &quot;bed&quot;)
-]</tw-passagedata></tw-storydata>
+]</tw-passagedata><tw-passagedata pid="11" name="Background image working" tags="" position="300,1050" size="100,100">&lt;div class=&quot;big-brackets&quot;&gt;
+  &lt;div class=&quot;dynamic-text&quot;&gt;
+    &lt;p class=&quot;line line-1&quot;&gt;A ring-shaped mosquito bite on your finger greets you in the morning.&lt;/p&gt;
+    &lt;p class=&quot;line line-2&quot;&gt;She wears a scarf tight around her skull as she washes the dishes.&lt;/p&gt;
+    &lt;p class=&quot;line line-3&quot;&gt;You collect the clean laundry from the balcony rail.&lt;/p&gt;
+    &lt;p class=&quot;line line-4&quot;&gt;Is it the heat or break from idling hands raised above the keyboard in contemplation that makes folding the clothes feel euphoric?&lt;/p&gt;
+    &lt;p class=&quot;line line-5&quot;&gt;The sun reaches into the story through the splinters. The peeling paint. The half-laid kitchen tile causing depressions in the floor.&lt;/p&gt;
+    &lt;p class=&quot;line line-6&quot;&gt;The tile trailing off, somewhere we are supposed to walk.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="A ring-shaped mosquito bite on your finger greets you in the morning" tags="" position="600,1100" size="100,100"></tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
