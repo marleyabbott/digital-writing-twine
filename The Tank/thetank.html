@@ -299,15 +299,25 @@ tw-story[tags~="background2"] {
 }
 
 .falling-text {
-  font-size: 20px;
-  color: black;
   position: absolute;
-  animation: fall 5s infinite linear;
+  font-size: 16px;
+  color: white;
+  opacity: 0;
+  animation: fall 5s infinite;
 }
 
 @keyframes fall {
-  0% { top: 0%; }
-  100% { top: 100%; }
+  0% {
+    top: -100px;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 100vh;
+    opacity: 0;
+  }
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="600,100" size="100,100">&lt;audio id=&quot;background-audio&quot; loop autoplay&gt;
   &lt;source src=&quot;audio/Space8-NalaSinephro.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
   Your browser does not support the audio element.
@@ -489,19 +499,22 @@ The bedroom that could fit the water tank inside of it maybe,
   &quot;&#39;&#39;Bile tainted with track changes&#39;&#39;&quot;
 ])
 
-&lt;!-- Create the falling text container --&gt;
+&lt;!-- Create the falling-text container --&gt;
 &lt;div id=&quot;falling-container&quot;&gt;
+  &lt;!-- Loop through each line --&gt;
   (for: each _line, _index, ...$lines)[
-    &lt;!-- Get random X position and delay for each line --&gt;
-    (set: _x to $randomX[_index])  &lt;!-- Get random X position --&gt;
-    (set: _delay to $randomDelays[_index])  &lt;!-- Get random delay --&gt;
+    &lt;!-- Get random X position and delay for each line using the index --&gt;
+    (set: _x to $randomX[_index])
+    (set: _delay to $randomDelays[_index])
     
     &lt;!-- Create the falling-text span for each line --&gt;
-    &lt;span class=&quot;falling-text&quot; style=&quot;position: absolute; left: calc(10% + 80% * _x); animation-delay: _delay s;&quot;&gt;
+    &lt;span class=&quot;falling-text&quot; style=&quot;left: calc(10% + 80% * _x); animation-delay: _delay s;&quot;&gt;
       _line
     &lt;/span&gt;
   ]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="Bile tainted with track changes" tags="" position="600,1100" size="100,100">[[next passage]]</tw-passagedata><tw-passagedata pid="14" name="a ring shaped mosquito bite greets you in the morning" tags="" position="600,1350" size="100,100"></tw-passagedata><tw-passagedata pid="15" name="falling line" tags="" position="725,975" size="100,100">(set: _text to _args[1])
+&lt;/div&gt;
+
+</tw-passagedata><tw-passagedata pid="13" name="Bile tainted with track changes" tags="" position="600,1100" size="100,100">[[next passage]]</tw-passagedata><tw-passagedata pid="14" name="a ring shaped mosquito bite greets you in the morning" tags="" position="600,1350" size="100,100"></tw-passagedata><tw-passagedata pid="15" name="falling line" tags="" position="725,975" size="100,100">(set: _text to _args[1])
 (set: _x to _args[2])
 (set: _delay to _args[3])
 
