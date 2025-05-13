@@ -28,25 +28,22 @@ tw-story {
 tw-link,
 tw-link:link,
 tw-link:visited,
-tw-link.visited {
-  color: #3C3633;         
-  font-weight: bold;     
-  text-decoration: none;  
-}
-
-tw-link[click-append] {
-  color: #3C3633;         
-  font-weight: bold;     
-  text-decoration: none;
-}
-
-tw-link:focus,
 tw-link:hover,
 tw-link:active,
-tw-link.visited:hover {
-  color: #3C3633;         
-  font-weight: bold;
-  text-decoration: none; 
+tw-link.visited,
+tw-link.visited:hover,
+.enchantment-link,
+tw-hook[class*="link"],
+a.enchantment-link {
+  color: #3C3633 !important;
+  font-weight: bold !important;
+  text-decoration: none !important;
+}
+
+/* Targets the internal span that Harlowe sometimes uses */
+tw-link span,
+.enchantment-link span {
+  color: #3C3633 !important;
 }
 
 
