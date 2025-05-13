@@ -535,10 +535,22 @@ The bedroom that could fit the water tank inside of it maybe,
 
 &lt;span class=&quot;falling-text&quot; style=&quot;--random-x: _x; animation-delay: _delay + s;&quot;&gt;
   _text
-&lt;/span&gt;</tw-passagedata><tw-passagedata pid="16" name="messy table" tags="backgroundimage3" position="300,1125" size="100,100">(raw: &quot;&lt;img src=&#39;images/letter.jpg&#39; class=&#39;scrap-img&#39; /&gt;&quot;)
+&lt;/span&gt;</tw-passagedata><tw-passagedata pid="16" name="messy table" tags="backgroundimage3" position="300,1125" size="100,100">(set: $images to (a: &quot;letter.jpg&quot;, &quot;family.jpg&quot;, &quot;photo3.png&quot;, &quot;ticket.png&quot;, &quot;postcard.jpg&quot;))
+(set: $collage to &quot;&quot;)
 
+(link: &quot;Add next image&quot;)[
+  (if: $images&#39;s length &gt; 0)[
+    (set: _image to $images&#39;s 1st)
+    (set: $images to $images&#39;s 2ndToLast)
+    (set: _x to (random: 0, 90))
+    (set: _y to (random: 0, 90))
+    (set: _r to (random: -30, 30))
+    (set: _imgHTML to &quot;&lt;img src=&#39;images/&quot; + _image + &quot;&#39; class=&#39;scrap-img&#39; style=&#39;top:&quot; + _y + &quot;%; left:&quot; + _x + &quot;%; transform: rotate(&quot; + _r + &quot;deg);&#39;&gt;&quot;)
+    (set: $collage to $collage + _imgHTML)
+  ]
+]
 
-</tw-passagedata></tw-storydata>
+$collage</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
