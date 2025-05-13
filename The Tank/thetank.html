@@ -473,8 +473,8 @@ The bedroom that could fit the water tank inside of it maybe,
     &lt;p class=&quot;line line-6&quot;&gt;The tile trailing off, somewhere we are supposed to walk.&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="arrive in calabria" tags="background2" position="600,975" size="100,100">&lt;!-- Precompute random X positions and delays for each line --&gt;
-(set: $randomX to (for: each _line, ...$lines)[(random: 0, 100) / 100]) 
-(set: $randomDelays to (for: each _line, ...$lines)[(random: 0, 4)])
+(set: $randomX to (array: (random: 0, 100), (random: 0, 100), (random: 0, 100), (random: 0, 100), (random: 0, 100), (random: 0, 100), (random: 0, 100), (random: 0, 100)))
+(set: $randomDelays to (array: (random: 0, 4), (random: 0, 4), (random: 0, 4), (random: 0, 4), (random: 0, 4), (random: 0, 4), (random: 0, 4), (random: 0, 4)))
 
 &lt;!-- Define the lines of text --&gt;
 (set: $lines to [
@@ -492,9 +492,9 @@ The bedroom that could fit the water tank inside of it maybe,
 &lt;!-- Create the falling text container --&gt;
 &lt;div id=&quot;falling-container&quot;&gt;
   (for: each _line, _index, ...$lines)[
-    &lt;!-- Set the random X position and delay for each line --&gt;
-    (set: _x to $randomX[_index]) &lt;!-- Get random X position from precomputed values --&gt;
-    (set: _delay to $randomDelays[_index]) &lt;!-- Get random delay from precomputed values --&gt;
+    &lt;!-- Get random X position and delay for each line --&gt;
+    (set: _x to $randomX[_index])  &lt;!-- Get random X position --&gt;
+    (set: _delay to $randomDelays[_index])  &lt;!-- Get random delay --&gt;
     
     &lt;!-- Create the falling-text span for each line --&gt;
     &lt;span class=&quot;falling-text&quot; style=&quot;position: absolute; left: calc(10% + 80% * _x); animation-delay: _delay s;&quot;&gt;
