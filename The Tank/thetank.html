@@ -305,49 +305,44 @@ tw-sidebar [role=button] {
   align-self: center;
   display: block;
 }
-.clean-passage {
-  display: grid;
-  grid-template-columns: 1fr minmax(200px, 600px) 1fr;
-  row-gap: 2.5rem;
-  margin: 5rem 0;
-}
-
-.clean-passage .line {
-  grid-column: 2;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  font-family: 'CabrionLight', sans-serif;
-}
-
-.clean-passage .line-1 {
-  margin-top: 1rem;
-}
-.clean-passage .line-2 {
-  margin-top: 1rem;
-}
-.clean-passage .line-3 {
-  margin-top: 1rem;
-}
-
-/* Image styling — clean, minimal, aligned left/right */
-.clean-passage .inter-text-image {
+.dynamic-text {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
   width: 100%;
-  max-width: 500px;
-  height: auto;
-  display: block;
+  justify-content: space-between;
+}
+
+.line {
+  font-size: 1rem;
+  color: #3C3633;
+  font-family: 'CabrionLight', sans-serif;
   margin: 0;
+  line-height: 1.4;
+  text-align: left;
+  max-width: 45%;
 }
 
-/* Left-aligned image (offset into left column) */
-.clean-passage .image-left {
-  grid-column: 1 / span 1;
-  justify-self: end;
+.line-1, .line-3, .line-5, .line-7 {
+  order: 1; /* Move these to the left side */
 }
 
-/* Right-aligned image (offset into right column) */
-.clean-passage .image-right {
-  grid-column: 3 / span 1;
-  justify-self: start;
+.line-2, .line-4, .line-6, .line-8 {
+  order: 2; /* Move these to the right side */
+}
+
+.inter-text-image {
+  width: 45%;
+  max-width: 350px;
+  margin: 2rem 0;
+  border-radius: 0;
+  object-fit: cover;
+  box-shadow: none;
+  transform: rotate(-1deg); /* Adds a slight rotation for a dynamic feel */
+}
+
+.inter-text-image:nth-of-type(2n) {
+  transform: rotate(1deg); /* Adds a slight rotation to alternate images */
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="600,100" size="100,100">&lt;audio id=&quot;background-audio&quot; loop autoplay&gt;
   &lt;source src=&quot;audio/Space8-NalaSinephro.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
   Your browser does not support the audio element.
@@ -450,8 +445,7 @@ The bedroom that could fit the water tank inside of it maybe,
 
     &lt;p class=&quot;line line-8&quot;&gt;The tile trailing off, somewhere you’re supposed to walk.&lt;/p&gt;
   &lt;/div&gt;
-&lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="7" name="Untitled Passage" tags="" position="300,900" size="100,100">&lt;tw-passage&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="7" name="Untitled Passage" tags="" position="300,900" size="100,100">&lt;tw-passage&gt;
   &lt;div class=&quot;grid-container&quot;&gt;
     &lt;!-- Example Image 1 --&gt;
     &lt;div class=&quot;grid-item image-item&quot;&gt;
