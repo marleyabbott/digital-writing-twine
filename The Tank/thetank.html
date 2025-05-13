@@ -322,6 +322,15 @@ tw-story[tags~="background2"] {
     top: 100vh;
     opacity: 0;
   }
+}
+#falling-container tw-link {
+  font-weight: bold !important;  /* Ensure bold styling */
+  text-decoration: none !important;  /* No underline */
+}
+
+#falling-container tw-link:hover {
+  color: #FF5733 !important;  /* Change color when hovering */
+  text-decoration: underline !important;  /* Underline on hover */
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="600,100" size="100,100">&lt;audio id=&quot;background-audio&quot; loop autoplay&gt;
   &lt;source src=&quot;audio/Space8-NalaSinephro.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
   Your browser does not support the audio element.
@@ -496,7 +505,7 @@ The bedroom that could fit the water tank inside of it maybe,
   A woman working in the bar corrects your sentences. 
   You repeat after her. Swirl the words around your mouth... 
   Chew on them, swallow, but they come rising back up. 
-  &#39;&#39;Bile tainted with track changes&#39;&#39;
+  &lt;tw-link href=&#39;Next Passage&#39;&gt;Bile tainted with track changes&lt;/tw-link&gt;
 &quot;)
 
 &lt;!-- Create the falling-text container --&gt;
@@ -505,7 +514,8 @@ The bedroom that could fit the water tank inside of it maybe,
   &lt;span class=&quot;falling-text&quot;&gt;
     (print: $fallingText)
   &lt;/span&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="Bile tainted with track changes" tags="" position="600,1100" size="100,100">[[next passage]]</tw-passagedata><tw-passagedata pid="14" name="a ring shaped mosquito bite greets you in the morning" tags="" position="600,1350" size="100,100"></tw-passagedata><tw-passagedata pid="15" name="falling line" tags="" position="725,975" size="100,100">(set: _text to _args[1])
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="13" name="Bile tainted with track changes" tags="" position="600,1100" size="100,100">[[next passage]]</tw-passagedata><tw-passagedata pid="14" name="a ring shaped mosquito bite greets you in the morning" tags="" position="600,1350" size="100,100"></tw-passagedata><tw-passagedata pid="15" name="falling line" tags="" position="725,975" size="100,100">(set: _text to _args[1])
 (set: _x to _args[2])
 (set: _delay to _args[3])
 
