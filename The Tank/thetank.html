@@ -498,7 +498,8 @@ The bedroom that could fit the water tank inside of it maybe,
   (for: each _line, ...$lines)[
     (set: _x to (random: 0, 100) / 100) &lt;!-- Random X position --&gt;
     (set: _delay to (random: 0, 4)) &lt;!-- Random delay --&gt;
-    
+
+    &lt;!-- Now correctly using the variables in the inline style --&gt;
     &lt;span class=&quot;falling-text&quot; style=&quot;--random-x: _x; animation-delay: _delay + s;&quot;&gt;
       _line
     &lt;/span&gt;
