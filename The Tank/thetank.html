@@ -343,7 +343,15 @@ tw-story[tags~="background3"] {
   opacity: 1;
   transition: transform 0.5s ease;
   z-index: 1;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="600,100" size="100,100">&lt;audio id=&quot;background-audio&quot; loop autoplay&gt;
+}
+.scrap-img {
+  position: absolute;
+  width: 150px; /* Adjust as needed */
+  opacity: 1;
+  transition: transform 0.5s ease;
+  z-index: 1;
+}
+</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="600,100" size="100,100">&lt;audio id=&quot;background-audio&quot; loop autoplay&gt;
   &lt;source src=&quot;audio/Space8-NalaSinephro.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
   Your browser does not support the audio element.
 &lt;/audio&gt;
@@ -533,22 +541,28 @@ The bedroom that could fit the water tank inside of it maybe,
 
 &lt;span class=&quot;falling-text&quot; style=&quot;--random-x: _x; animation-delay: _delay + s;&quot;&gt;
   _text
-&lt;/span&gt;</tw-passagedata><tw-passagedata pid="16" name="messy table" tags="backgroundimage3" position="300,1125" size="100,100">&lt;!-- Step 1: Define an array of image file names --&gt;
+&lt;/span&gt;</tw-passagedata><tw-passagedata pid="16" name="messy table" tags="backgroundimage3" position="300,1125" size="100,100">&lt;!-- Step 1: Define an array of image filenames --&gt;
 (set: $images to (array: &quot;letter.jpg&quot;, &quot;family.jpg&quot;, &quot;photo3.png&quot;, &quot;ticket.png&quot;, &quot;postcard.jpg&quot;))
 
-&lt;!-- Step 2: Generate random images and position them --&gt;
+&lt;!-- Step 2: Generate random positions and rotations for images --&gt;
+
+&lt;!-- First Image --&gt;
 (set: $image1 to &quot;&lt;img src=&#39;images/&quot; + (either: $images) + &quot;&#39; class=&#39;scrap-img&#39; style=&#39;top:&quot; + (random: 0, 90) + &quot;%; left:&quot; + (random: 0, 90) + &quot;%; transform: rotate(&quot; + (random: -30, 30) + &quot;deg);&#39;&gt;&quot;)
+
+&lt;!-- Second Image --&gt;
 (set: $image2 to &quot;&lt;img src=&#39;images/&quot; + (either: $images) + &quot;&#39; class=&#39;scrap-img&#39; style=&#39;top:&quot; + (random: 0, 90) + &quot;%; left:&quot; + (random: 0, 90) + &quot;%; transform: rotate(&quot; + (random: -30, 30) + &quot;deg);&#39;&gt;&quot;)
+
+&lt;!-- Third Image --&gt;
 (set: $image3 to &quot;&lt;img src=&#39;images/&quot; + (either: $images) + &quot;&#39; class=&#39;scrap-img&#39; style=&#39;top:&quot; + (random: 0, 90) + &quot;%; left:&quot; + (random: 0, 90) + &quot;%; transform: rotate(&quot; + (random: -30, 30) + &quot;deg);&#39;&gt;&quot;)
+
+&lt;!-- Fourth Image --&gt;
 (set: $image4 to &quot;&lt;img src=&#39;images/&quot; + (either: $images) + &quot;&#39; class=&#39;scrap-img&#39; style=&#39;top:&quot; + (random: 0, 90) + &quot;%; left:&quot; + (random: 0, 90) + &quot;%; transform: rotate(&quot; + (random: -30, 30) + &quot;deg);&#39;&gt;&quot;)
+
+&lt;!-- Fifth Image --&gt;
 (set: $image5 to &quot;&lt;img src=&#39;images/&quot; + (either: $images) + &quot;&#39; class=&#39;scrap-img&#39; style=&#39;top:&quot; + (random: 0, 90) + &quot;%; left:&quot; + (random: 0, 90) + &quot;%; transform: rotate(&quot; + (random: -30, 30) + &quot;deg);&#39;&gt;&quot;)
 
-&lt;!-- Step 3: Concatenate all images into one large collage --&gt;
-(set: $collage to $image1 + $image2 + $image3 + $image4 + $image5)
-
-&lt;!-- Step 4: Display the collage --&gt;
-$collage
-</tw-passagedata></tw-storydata>
+&lt;!-- Step 3: Display all the images at once --&gt;
+$collage</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
