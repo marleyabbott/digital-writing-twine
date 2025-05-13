@@ -292,6 +292,11 @@ tw-story[tags~="background2"] {
   background: url('images/sky.jpg') center center / cover no-repeat fixed;
 }
 
+#falling-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
 .falling-text {
   position: absolute;
   animation: fall 6s linear forwards;
@@ -304,20 +309,12 @@ tw-story[tags~="background2"] {
 @keyframes fall {
   0% {
     top: -5%;
-    left: calc(10% + 80% * var(--random-x));
     opacity: 1;
   }
   100% {
     top: 100%;
-    left: calc(10% + 80% * var(--random-x));
     opacity: 0;
   }
-}
-
-#falling-container {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="600,100" size="100,100">&lt;audio id=&quot;background-audio&quot; loop autoplay&gt;
   &lt;source src=&quot;audio/Space8-NalaSinephro.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
   Your browser does not support the audio element.
@@ -496,11 +493,12 @@ The bedroom that could fit the water tank inside of it maybe,
 
 &lt;div id=&quot;falling-container&quot;&gt;
   (for: each _line, ...$lines)[
+    &lt;!-- Set the variables --&gt;
     (set: _x to (random: 0, 100) / 100) &lt;!-- Random X position --&gt;
     (set: _delay to (random: 0, 4)) &lt;!-- Random delay --&gt;
 
-    &lt;!-- Now correctly using the variables in the inline style --&gt;
-    &lt;span class=&quot;falling-text&quot; style=&quot;--random-x: _x; animation-delay: _delay + s;&quot;&gt;
+    &lt;!-- Now insert a falling-text span using the calculated values --&gt;
+    &lt;span class=&quot;falling-text&quot; style=&quot;position: absolute; left: calc(10% + 80% * _x); animation-delay: _delay s;&quot;&gt;
       _line
     &lt;/span&gt;
   ]
