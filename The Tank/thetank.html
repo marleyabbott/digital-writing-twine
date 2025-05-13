@@ -304,6 +304,50 @@ tw-sidebar [role=button] {
   transform: none !important; /* Remove rotation */
   align-self: center;
   display: block;
+}
+.clean-passage {
+  display: grid;
+  grid-template-columns: 1fr minmax(200px, 600px) 1fr;
+  row-gap: 2.5rem;
+  margin: 5rem 0;
+}
+
+.clean-passage .line {
+  grid-column: 2;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-family: 'CabrionLight', sans-serif;
+}
+
+.clean-passage .line-1 {
+  margin-top: 1rem;
+}
+.clean-passage .line-2 {
+  margin-top: 1rem;
+}
+.clean-passage .line-3 {
+  margin-top: 1rem;
+}
+
+/* Image styling — clean, minimal, aligned left/right */
+.clean-passage .inter-text-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 0;
+}
+
+/* Left-aligned image (offset into left column) */
+.clean-passage .image-left {
+  grid-column: 1 / span 1;
+  justify-self: end;
+}
+
+/* Right-aligned image (offset into right column) */
+.clean-passage .image-right {
+  grid-column: 3 / span 1;
+  justify-self: start;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="600,100" size="100,100">&lt;audio id=&quot;background-audio&quot; loop autoplay&gt;
   &lt;source src=&quot;audio/Space8-NalaSinephro.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
   Your browser does not support the audio element.
@@ -396,7 +440,7 @@ The bedroom that could fit the water tank inside of it maybe,
 
     &lt;p class=&quot;line line-5&quot;&gt;The light on your arms is warm. You can smell the eucalyptus in the air, and the detergent in the fabric.&lt;/p&gt;
 
-    &lt;img src=&quot;images/plant.jpg&quot; class=&quot;inter-text-image&quot;&gt;
+    &lt;img src=&quot;images/letter.jpg&quot; class=&quot;inter-text-image&quot;&gt;
 
     &lt;p class=&quot;line line-6&quot;&gt;Folding the clothes feels euphoric.&lt;/p&gt;
 
