@@ -502,8 +502,11 @@ The bedroom that could fit the water tank inside of it maybe,
 &lt;!-- Create the falling-text container --&gt;
 &lt;div id=&quot;falling-container&quot;&gt;
   &lt;!-- Loop through each line --&gt;
-  (for: each _line, _index, ...$lines)[
-    &lt;!-- Get random X position and delay for each line using the index --&gt;
+  (for: each _line in $lines)[
+    &lt;!-- Get the index within the loop (we need a custom mechanism to store this) --&gt;
+    (set: _index to (index: _line, in: $lines))
+    
+    &lt;!-- Get random X position and delay for each line --&gt;
     (set: _x to $randomX[_index])
     (set: _delay to $randomDelays[_index])
     
@@ -512,9 +515,7 @@ The bedroom that could fit the water tank inside of it maybe,
       _line
     &lt;/span&gt;
   ]
-&lt;/div&gt;
-
-</tw-passagedata><tw-passagedata pid="13" name="Bile tainted with track changes" tags="" position="600,1100" size="100,100">[[next passage]]</tw-passagedata><tw-passagedata pid="14" name="a ring shaped mosquito bite greets you in the morning" tags="" position="600,1350" size="100,100"></tw-passagedata><tw-passagedata pid="15" name="falling line" tags="" position="725,975" size="100,100">(set: _text to _args[1])
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="Bile tainted with track changes" tags="" position="600,1100" size="100,100">[[next passage]]</tw-passagedata><tw-passagedata pid="14" name="a ring shaped mosquito bite greets you in the morning" tags="" position="600,1350" size="100,100"></tw-passagedata><tw-passagedata pid="15" name="falling line" tags="" position="725,975" size="100,100">(set: _text to _args[1])
 (set: _x to _args[2])
 (set: _delay to _args[3])
 
