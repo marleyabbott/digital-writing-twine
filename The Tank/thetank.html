@@ -313,12 +313,7 @@ You and your sister sit up in bed.</tw-passagedata><tw-passagedata pid="2" name=
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="3" name="bed" tags="" position="600,725" size="100,100">In your proper bedroom with the slated roof and the insulated walls, you could imagine many places better to live than a water tank.
 
 The bedroom that could fit the water tank inside of it maybe, 
-(click-append: &quot;maybe,&quot;)[ [[if you could measure the parameters.]] ]</tw-passagedata><tw-passagedata pid="4" name="if you could measure the parameters." tags="" position="600,850" size="100,100">&lt;div class=&quot;image-text-container&quot;&gt;
-  &lt;img src=&quot;images/tankbottle.jpg&quot; alt=&quot;Old water tank&quot; class=&quot;side-image&quot; /&gt;
-  &lt;div class=&quot;text-block&quot;&gt;
-    &lt;p&gt;You walk the parameters of the story, graze your hand on the corrugated iron edges’.&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+(click-append: &quot;maybe,&quot;)[ [[if you could measure the parameters.]] ]</tw-passagedata><tw-passagedata pid="4" name="if you could measure the parameters." tags="" position="600,850" size="100,100">&lt;p&gt;You walk the parameters of the story, graze your hand on the corrugated iron edges’.&lt;/p&gt;
 
 |fade&gt;[ ]
 
@@ -434,8 +429,14 @@ The bedroom that could fit the water tank inside of it maybe,
   &lt;/div&gt;
 &lt;/div&gt;
 
-</tw-passagedata><tw-passagedata pid="10" name="They slept on piles of clothes instead of a bed" tags="" position="600,600" size="100,100">|fadeOut&gt;[&lt;span class=&quot;fade-target&quot;&gt;No fridge to store food, they only ate shelf-staple food. On the one day your Nonno splashed out and bought meat, your Nonna ruined the dish because she couldn’t read English on the bottle labelled, ‘sweet and sour sauce.&lt;/span&gt;]
-
+</tw-passagedata><tw-passagedata pid="10" name="They slept on piles of clothes instead of a bed" tags="" position="600,600" size="100,100">|fadeOut&gt;[
+  &lt;div class=&quot;image-text-container fade-target&quot;&gt;
+    &lt;img src=&quot;images/tankbottle.jpg&quot; alt=&quot;Old water tank&quot; class=&quot;side-image&quot; /&gt;
+    &lt;div class=&quot;text-block&quot;&gt;
+      &lt;p&gt;No fridge to store food, they only ate shelf-staple food. On the one day your Nonno splashed out and bought meat, your Nonna ruined the dish because she couldn’t read English on the bottle labelled, ‘sweet and sour sauce&#39;.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+]
 (after: 2s)[
   (enchant: ?fadeOut, (css: &quot;animation: fadeOut 3s ease forwards;&quot;))
 ]
@@ -444,8 +445,6 @@ The bedroom that could fit the water tank inside of it maybe,
   (replace: ?fadeOut)[]
   (goto: &quot;bed&quot;)
 ]
-
-
 </tw-passagedata><tw-passagedata pid="11" name="Background image working" tags="" position="300,1050" size="100,100">&lt;div class=&quot;big-brackets&quot;&gt;
   &lt;div class=&quot;dynamic-text&quot;&gt;
     &lt;p class=&quot;line line-1&quot;&gt;A ring-shaped mosquito bite on your finger greets you in the morning.&lt;/p&gt;
