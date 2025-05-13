@@ -264,55 +264,48 @@ tw-sidebar [role=button] {
   opacity: 1 !important;
   color: #3C3633 !important; /* Optional: match your text color */
 }
-.inter-text-image {
-  width: 50%;
-  max-width: 400px;
-  margin: 2rem 0;
-  border-radius: 0; /* No rounded corners */
-  display: block;
+
+/* Image-text container for side-by-side layout */
+.image-text-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 1rem;
+  max-width: 90%;
+  margin: 2rem auto;
+  flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+/* Image styles */
+.side-image {
+  width: 350px;
+  max-width: 100%;
+  border-radius: 10px;
   object-fit: cover;
-  box-shadow: none; /* Remove shadow */
-
-  /* Dynamic layout look */
-  transform: rotate(-1deg);
+  flex-shrink: 0; /* Prevent the image from shrinking */
+  margin-left: -100px; 
+  margin-top: 40px;
 }
 
-.inter-text-image:nth-of-type(2n) {
-  align-self: flex-start;
-  margin-left: 3rem;
-  transform: rotate(2deg);
-}
-
-.inter-text-image:nth-of-type(2n+1) {
-  align-self: flex-end;
-  margin-right: 3rem;
-  transform: rotate(-2deg);
-}
-.clean-passage .line {
-  font-size: 1.2rem;         /* Bigger text */
+/* Text block styles */
+.text-block {
+  flex: 1;
+  font-family: 'CabrionLight', sans-serif;
+  color: #3C3633;
   line-height: 1.6;
-  max-width: 85%;
-  margin: 1rem auto;
   text-align: left;
-  align-self: center;        /* Align center uniformly */
 }
 
-.clean-passage .inter-text-image {
-  width: 35%;                /* Smaller images */
-  margin: 1.5rem 0;
-  border-radius: 0;
-  transform: none !important; /* Remove rotation */
-  align-self: center;
-  display: block;
-}
+/* Update to dynamic text container for correct alignment */
 .dynamic-text {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  width: 100%;
-  justify-content: space-between;
+  justify-content: space-between; /* Ensure space between text blocks */
+  width: 100%; /* Ensure it takes the full width of the container */
 }
 
+/* Adjust line classes to stagger them */
 .line {
   font-size: 1rem;
   color: #3C3633;
@@ -323,6 +316,7 @@ tw-sidebar [role=button] {
   max-width: 45%;
 }
 
+/* Adjust individual line positioning */
 .line-1, .line-3, .line-5, .line-7 {
   order: 1; /* Move these to the left side */
 }
@@ -331,6 +325,7 @@ tw-sidebar [role=button] {
   order: 2; /* Move these to the right side */
 }
 
+/* Image styles in dynamic layout */
 .inter-text-image {
   width: 45%;
   max-width: 350px;
@@ -338,9 +333,10 @@ tw-sidebar [role=button] {
   border-radius: 0;
   object-fit: cover;
   box-shadow: none;
-  transform: rotate(-1deg); /* Adds a slight rotation for a dynamic feel */
+  transform: rotate(-1deg); /* Adds slight rotation for a dynamic feel */
 }
 
+/* Alternating image rotation */
 .inter-text-image:nth-of-type(2n) {
   transform: rotate(1deg); /* Adds a slight rotation to alternate images */
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="600,100" size="100,100">&lt;audio id=&quot;background-audio&quot; loop autoplay&gt;
