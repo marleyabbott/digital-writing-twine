@@ -340,15 +340,10 @@ tw-story[tags~="background3"] {
   position: absolute;
   width: 200px;
   transition: opacity 0.5s ease, transform 0.5s ease;
-  opacity: 0;
+  opacity: 1;
+  z-index: 1;
+  pointer-events: none;
 }
-
-.img1 { top: 50px; left: 100px; transform: rotate(-5deg); z-index: 1; }
-.img2 { top: 100px; left: 150px; transform: rotate(8deg); z-index: 2; }
-.img3 { top: 200px; left: 120px; transform: rotate(-10deg); z-index: 3; }
-/* Add as many as you like */
-
-.show { opacity: 1; }
 </style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="600,100" size="100,100">&lt;audio id=&quot;background-audio&quot; loop autoplay&gt;
   &lt;source src=&quot;audio/Space8-NalaSinephro.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
   Your browser does not support the audio element.
@@ -539,23 +534,23 @@ The bedroom that could fit the water tank inside of it maybe,
 
 &lt;span class=&quot;falling-text&quot; style=&quot;--random-x: _x; animation-delay: _delay + s;&quot;&gt;
   _text
-&lt;/span&gt;</tw-passagedata><tw-passagedata pid="16" name="messy table" tags="backgroundimage3" position="300,1125" size="100,100">&lt;img src=&quot;images/mum.jpg&quot; class=&quot;scrap-img img1&quot;&gt;
+&lt;/span&gt;</tw-passagedata><tw-passagedata pid="16" name="messy table" tags="backgroundimage3" position="300,1125" size="100,100">(set: $imageList to (a: &quot;letter.jpg&quot;, &quot;family.jpg&quot;, &quot;photo3.png&quot;))
+(set: $scrapbook to (a:))
 
-&lt;!-- Add images with specific classes --&gt;
-&lt;img src=&quot;images/letter.jpg&quot; class=&quot;scrap-img img1&quot;&gt;
-&lt;img src=&quot;images/family.jpg&quot; class=&quot;scrap-img img2&quot;&gt;
-&lt;img src=&quot;images/photo3.png&quot; class=&quot;scrap-img img3&quot;&gt;
-
-&lt;!-- Use a button to progressively show them --&gt;
-(link: &quot;Reveal Next Image&quot;)[
-  (set: $shown to it + 1)
-  (if: $shown &gt;= 1)[(live: 0.1)[(enchant: ?img1, &quot;show&quot;)]]
-  (if: $shown &gt;= 2)[(live: 0.1)[(enchant: ?img2, &quot;show&quot;)]]
-  (if: $shown &gt;= 3)[(live: 0.1)[(enchant: ?img3, &quot;show&quot;)]]
+(live: 1s)[
+  (if: $imageList&#39;s length &gt; 0)[
+    (set: _newImg to $imageList&#39;s 1st)
+    (set: $imageList to $imageList&#39;s tail)
+    (set: $scrapbook to it + (a: _newImg))
+  ]
 ]
 
-
-</tw-passagedata></tw-storydata>
+(for: each _img, ...$scrapbook)[
+  (set: _x to (random: 0, 80))
+  (set: _y to (random: 0, 80))
+  (set: _r to (random: -30, 30))
+  &lt;img src=&quot;images/[_img]&quot; class=&quot;scrap-img&quot; style=&quot;position:absolute; width:200px; top:[_y]%; left:[_x]%; transform: rotate([_r]deg);&quot;&gt;
+]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
