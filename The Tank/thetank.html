@@ -295,11 +295,11 @@ tw-story[tags~="background2"] {
 #falling-container {
   position: relative;
   width: 100%;
-  height: 100vh; /* Make sure it takes up the full height */
+  height: 100vh; /* Full height to make sure the text falls */
 }
 
 .falling-text {
-  font-size: 20px; /* Increase font size to make sure text is visible */
+  font-size: 20px;
   color: black;
   animation: fall 5s infinite linear;
 }
@@ -307,7 +307,8 @@ tw-story[tags~="background2"] {
 @keyframes fall {
   0% { top: 0%; }
   100% { top: 100%; }
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="600,100" size="100,100">&lt;audio id=&quot;background-audio&quot; loop autoplay&gt;
+}
+</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="600,100" size="100,100">&lt;audio id=&quot;background-audio&quot; loop autoplay&gt;
   &lt;source src=&quot;audio/Space8-NalaSinephro.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
   Your browser does not support the audio element.
 &lt;/audio&gt;
@@ -471,36 +472,33 @@ The bedroom that could fit the water tank inside of it maybe,
     &lt;p class=&quot;line line-5&quot;&gt;The sun reaches into the story through the splinters. The peeling paint. The half-laid kitchen tile causing depressions in the floor.&lt;/p&gt;
     &lt;p class=&quot;line line-6&quot;&gt;The tile trailing off, somewhere we are supposed to walk.&lt;/p&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="arrive in calabria" tags="background2" position="600,975" size="100,100">&lt;!-- Define your lines of text --&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="arrive in calabria" tags="background2" position="600,975" size="100,100">&lt;!-- Define your lines of text and corresponding random X positions and delays --&gt;
 (set: $lines to [
-  &quot;On the first night there is vomit.&quot;,
-  &quot;Before the vomit she talks at you in the language you have pretended to understand...&quot;,
-  &quot;The couch is made of wooden pellets, covered in thin foam.&quot;,
-  &quot;Before talk there is sugo and melone and formaggio...&quot;,
-  &quot;You decline. You retract. You are drunk.&quot;,
-  &quot;A woman working in the bar corrects your sentences.&quot;,
-  &quot;You repeat after her. Swirl the words around your mouth...&quot;,
-  &quot;Chew on them, swallow, but they come rising back up.&quot;,
-  &quot;&#39;&#39;Bile tainted with track changes&#39;&#39;&quot;
+  [&quot;On the first night there is vomit.&quot;, (random: 0, 100) / 100, (random: 0, 4)],
+  [&quot;Before the vomit she talks at you in the language you have pretended to understand...&quot;, (random: 0, 100) / 100, (random: 0, 4)],
+  [&quot;The couch is made of wooden pellets, covered in thin foam.&quot;, (random: 0, 100) / 100, (random: 0, 4)],
+  [&quot;Before talk there is sugo and melone and formaggio...&quot;, (random: 0, 100) / 100, (random: 0, 4)],
+  [&quot;You decline. You retract. You are drunk.&quot;, (random: 0, 100) / 100, (random: 0, 4)],
+  [&quot;A woman working in the bar corrects your sentences.&quot;, (random: 0, 100) / 100, (random: 0, 4)],
+  [&quot;You repeat after her. Swirl the words around your mouth...&quot;, (random: 0, 100) / 100, (random: 0, 4)],
+  [&quot;Chew on them, swallow, but they come rising back up.&quot;, (random: 0, 100) / 100, (random: 0, 4)],
+  [&quot;&#39;&#39;Bile tainted with track changes&#39;&#39;&quot;, (random: 0, 100) / 100, (random: 0, 4)]
 ])
 
-&lt;!-- Precompute positions and delays --&gt;
-(set: $randomX to (for: each _line, ...$lines)[(random: 0, 100) / 100]) &lt;!-- Generate random X positions --&gt;
-(set: $randomDelays to (for: each _line, ...$lines)[(random: 0, 4)]) &lt;!-- Generate random delays --&gt;
-
-&lt;!-- Container for the falling text --&gt;
+&lt;!-- Loop through each line and create the falling text --&gt;
 &lt;div id=&quot;falling-container&quot;&gt;
-  &lt;!-- Loop through each line and create the falling text --&gt;
-  (for: each _line, _index, ...$lines)[
-    (set: _x to $randomX[_index])
-    (set: _delay to $randomDelays[_index])
-
+  (for: each _line in $lines)[
+    (set: _text to (either: _line&#39;s 0))
+    (set: _x to (either: _line&#39;s 1))
+    (set: _delay to (either: _line&#39;s 2))
+    
     &lt;!-- Create a span for each line with its corresponding position and delay --&gt;
     &lt;span class=&quot;falling-text&quot; style=&quot;position: absolute; left: calc(10% + 80% * _x); animation-delay: _delay s;&quot;&gt;
-      (print: _line)
+      (print: _text)
     &lt;/span&gt;
   ]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="Bile tainted with track changes" tags="" position="600,1100" size="100,100">[[next passage]]</tw-passagedata><tw-passagedata pid="14" name="a ring shaped mosquito bite greets you in the morning" tags="" position="600,1350" size="100,100"></tw-passagedata><tw-passagedata pid="15" name="falling line" tags="" position="725,975" size="100,100">(set: _text to _args[1])
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="13" name="Bile tainted with track changes" tags="" position="600,1100" size="100,100">[[next passage]]</tw-passagedata><tw-passagedata pid="14" name="a ring shaped mosquito bite greets you in the morning" tags="" position="600,1350" size="100,100"></tw-passagedata><tw-passagedata pid="15" name="falling line" tags="" position="725,975" size="100,100">(set: _text to _args[1])
 (set: _x to _args[2])
 (set: _delay to _args[3])
 
