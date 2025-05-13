@@ -498,7 +498,9 @@ The bedroom that could fit the water tank inside of it maybe,
   (for: each _line, ...$lines)[
     (set: _x to (random: 0, 100) / 100)
     (set: _delay to (random: 0, 4))
-    (display: &quot;falling line&quot; _line _x _delay)
+    &lt;span class=&quot;falling-text&quot; style=&quot;--random-x: _x; animation-delay: _delay + s;&quot;&gt;
+      _line
+    &lt;/span&gt;
   ]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="Bile tainted with track changes" tags="" position="600,1100" size="100,100">[[next passage]]</tw-passagedata><tw-passagedata pid="14" name="a ring shaped mosquito bite greets you in the morning" tags="" position="600,1350" size="100,100"></tw-passagedata><tw-passagedata pid="15" name="falling line" tags="" position="725,975" size="100,100">(set: _text to _args[1])
 (set: _x to _args[2])
