@@ -333,21 +333,24 @@ tw-story[tags~="background2"] {
   text-decoration: underline !important;  /* Underline on hover */
 }
 
-/* Apply background image to the entire body */
+/* Apply background image to passages with background3 tag */
 tw-story[tags~="background3"] {
-  background-image: url('images/tablecloth.jpg'); /* Change to your background image */
-  background-size: cover;  /* Ensures the image covers the entire screen */
-  background-position: center center;  /* Centers the image */
-  background-attachment: fixed;  /* Keeps the background fixed during scroll */
-  height: 100vh;  /* Ensures the background covers the full height of the viewport */
-  width: 100vw;  /* Ensures the background covers the full width of the viewport */
-  position: relative; /* Allows other elements to layer on top */
+  background-image: url('images/tablecloth.jpg'); /* Adjust the image path if necessary */
+  background-size: cover; /* Ensure the background covers the entire screen */
+  background-position: center center; /* Center the image */
+  background-attachment: fixed; /* Keep the background fixed during scrolling */
+  width: 100vw; /* Make the background cover the full width of the viewport */
+  height: 100vh; /* Make the background cover the full height of the viewport */
+  position: fixed; /* Keep it fixed as the content scrolls */
+  top: 0;
+  left: 0;
 }
 
-/* Optional: Adjust text color and spacing on top of background */
+/* Make sure the text is legible over the background */
 tw-story {
-  color: white; /* Adjust text color for contrast */
-  padding: 20px;
+  color: white; /* Adjust the text color if needed */
+  padding: 20px; /* Add some padding if necessary */
+  z-index: 1; /* Ensure text is above background */
 }
 
 .scrap-img {
@@ -545,7 +548,7 @@ The bedroom that could fit the water tank inside of it maybe,
 
 &lt;span class=&quot;falling-text&quot; style=&quot;--random-x: _x; animation-delay: _delay + s;&quot;&gt;
   _text
-&lt;/span&gt;</tw-passagedata><tw-passagedata pid="16" name="messy table" tags="backgroundimage3" position="300,1125" size="100,100"> &lt;script&gt;
+&lt;/span&gt;</tw-passagedata><tw-passagedata pid="16" name="messy table" tags="" position="300,1125" size="100,100"> &lt;script&gt;
   // Array of images to display (add as many as you want)
   var images = [
     &quot;letter.jpg&quot;, &quot;family.jpg&quot;, &quot;mum.jpg&quot;,  &quot;nonnocitizenship.jpg&quot;, &quot;cousins.jpg&quot;, &quot;postcard.jpg&quot;, &quot;farm.jpg&quot;, &quot;marriagecertificate.jpg&quot;, &quot;cross.jpg&quot;, &quot;mountains1.jpg&quot;, &quot;jesus1.jpg&quot;, &quot;stairs.jpg&quot;, &quot;mumbirthcertificate.jpg&quot;, &quot;italy.jpg&quot;, &quot;procession1.jpg&quot;, &quot;nonni.jpg&quot;, &quot;zio.jpg&quot;, &quot;mountain2.jpg&quot;, &quot;leaf1.jpg&quot;, &quot;leaf2.jpg&quot;, &quot;maria.jpg&quot;, &quot;jesus2.jpg&quot;, &quot;church1.jpg&quot;, &quot;nonnomilitary.jpg&quot;
