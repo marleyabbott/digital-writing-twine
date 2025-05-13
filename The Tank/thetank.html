@@ -533,20 +533,20 @@ The bedroom that could fit the water tank inside of it maybe,
 
 &lt;span class=&quot;falling-text&quot; style=&quot;--random-x: _x; animation-delay: _delay + s;&quot;&gt;
   _text
-&lt;/span&gt;</tw-passagedata><tw-passagedata pid="16" name="messy table" tags="backgroundimage3" position="300,1125" size="100,100">&lt;!-- Set up an array of images --&gt;
+&lt;/span&gt;</tw-passagedata><tw-passagedata pid="16" name="messy table" tags="backgroundimage3" position="300,1125" size="100,100">&lt;!-- Step 1: Define an array of image file names --&gt;
 (set: $images to (array: &quot;letter.jpg&quot;, &quot;family.jpg&quot;, &quot;photo3.png&quot;, &quot;ticket.png&quot;, &quot;postcard.jpg&quot;))
 
-&lt;!-- Generate random image HTML with random positions and rotations --&gt;
-(set: $image1 to &quot;&lt;img src=&#39;images/&quot; + (either: 1, 2, 3, 4, 5, $images) + &quot;&#39; class=&#39;scrap-img&#39; style=&#39;top:&quot; + (random: 0, 90) + &quot;%; left:&quot; + (random: 0, 90) + &quot;%; transform: rotate(&quot; + (random: -30, 30) + &quot;deg);&#39;&gt;&quot;)
-(set: $image2 to &quot;&lt;img src=&#39;images/&quot; + (either: 1, 2, 3, 4, 5, $images) + &quot;&#39; class=&#39;scrap-img&#39; style=&#39;top:&quot; + (random: 0, 90) + &quot;%; left:&quot; + (random: 0, 90) + &quot;%; transform: rotate(&quot; + (random: -30, 30) + &quot;deg);&#39;&gt;&quot;)
-(set: $image3 to &quot;&lt;img src=&#39;images/&quot; + (either: 1, 2, 3, 4, 5, $images) + &quot;&#39; class=&#39;scrap-img&#39; style=&#39;top:&quot; + (random: 0, 90) + &quot;%; left:&quot; + (random: 0, 90) + &quot;%; transform: rotate(&quot; + (random: -30, 30) + &quot;deg);&#39;&gt;&quot;)
-(set: $image4 to &quot;&lt;img src=&#39;images/&quot; + (either: 1, 2, 3, 4, 5, $images) + &quot;&#39; class=&#39;scrap-img&#39; style=&#39;top:&quot; + (random: 0, 90) + &quot;%; left:&quot; + (random: 0, 90) + &quot;%; transform: rotate(&quot; + (random: -30, 30) + &quot;deg);&#39;&gt;&quot;)
-(set: $image5 to &quot;&lt;img src=&#39;images/&quot; + (either: 1, 2, 3, 4, 5, $images) + &quot;&#39; class=&#39;scrap-img&#39; style=&#39;top:&quot; + (random: 0, 90) + &quot;%; left:&quot; + (random: 0, 90) + &quot;%; transform: rotate(&quot; + (random: -30, 30) + &quot;deg);&#39;&gt;&quot;)
+&lt;!-- Step 2: Generate random images and position them --&gt;
+(set: $image1 to &quot;&lt;img src=&#39;images/&quot; + (either: $images) + &quot;&#39; class=&#39;scrap-img&#39; style=&#39;top:&quot; + (random: 0, 90) + &quot;%; left:&quot; + (random: 0, 90) + &quot;%; transform: rotate(&quot; + (random: -30, 30) + &quot;deg);&#39;&gt;&quot;)
+(set: $image2 to &quot;&lt;img src=&#39;images/&quot; + (either: $images) + &quot;&#39; class=&#39;scrap-img&#39; style=&#39;top:&quot; + (random: 0, 90) + &quot;%; left:&quot; + (random: 0, 90) + &quot;%; transform: rotate(&quot; + (random: -30, 30) + &quot;deg);&#39;&gt;&quot;)
+(set: $image3 to &quot;&lt;img src=&#39;images/&quot; + (either: $images) + &quot;&#39; class=&#39;scrap-img&#39; style=&#39;top:&quot; + (random: 0, 90) + &quot;%; left:&quot; + (random: 0, 90) + &quot;%; transform: rotate(&quot; + (random: -30, 30) + &quot;deg);&#39;&gt;&quot;)
+(set: $image4 to &quot;&lt;img src=&#39;images/&quot; + (either: $images) + &quot;&#39; class=&#39;scrap-img&#39; style=&#39;top:&quot; + (random: 0, 90) + &quot;%; left:&quot; + (random: 0, 90) + &quot;%; transform: rotate(&quot; + (random: -30, 30) + &quot;deg);&#39;&gt;&quot;)
+(set: $image5 to &quot;&lt;img src=&#39;images/&quot; + (either: $images) + &quot;&#39; class=&#39;scrap-img&#39; style=&#39;top:&quot; + (random: 0, 90) + &quot;%; left:&quot; + (random: 0, 90) + &quot;%; transform: rotate(&quot; + (random: -30, 30) + &quot;deg);&#39;&gt;&quot;)
 
-&lt;!-- Concatenate the images into one large collage --&gt;
+&lt;!-- Step 3: Concatenate all images into one large collage --&gt;
 (set: $collage to $image1 + $image2 + $image3 + $image4 + $image5)
 
-&lt;!-- Display the collage --&gt;
+&lt;!-- Step 4: Display the collage --&gt;
 $collage
 </tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
