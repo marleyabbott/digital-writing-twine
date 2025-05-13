@@ -265,13 +265,28 @@ tw-sidebar [role=button] {
   color: #3C3633 !important; /* Optional: match your text color */
 }
 .inter-text-image {
-  width: 60%;
-  max-width: 500px;
-  margin: 1rem auto;
-  border-radius: 12px;
+  width: 50%;
+  max-width: 400px;
+  margin: 2rem 0;
+  border-radius: 0; /* No rounded corners */
   display: block;
   object-fit: cover;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: none; /* Remove shadow */
+
+  /* Dynamic layout look */
+  transform: rotate(-1deg);
+}
+
+.inter-text-image:nth-of-type(2n) {
+  align-self: flex-start;
+  margin-left: 3rem;
+  transform: rotate(2deg);
+}
+
+.inter-text-image:nth-of-type(2n+1) {
+  align-self: flex-end;
+  margin-right: 3rem;
+  transform: rotate(-2deg);
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="600,100" size="100,100">&lt;audio id=&quot;background-audio&quot; loop autoplay&gt;
   &lt;source src=&quot;audio/Space8-NalaSinephro.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
   Your browser does not support the audio element.
