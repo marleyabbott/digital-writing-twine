@@ -301,6 +301,7 @@ tw-story[tags~="background2"] {
 .falling-text {
   font-size: 20px;
   color: black;
+  position: absolute;
   animation: fall 5s infinite linear;
 }
 
@@ -485,24 +486,21 @@ The bedroom that could fit the water tank inside of it maybe,
 ])
 
 &lt;!-- Precompute random values for X positions and delays --&gt;
-(set: $randomX to (for: each _line, ...$lines)[(random: 0, 100) / 100]) 
-(set: $randomDelays to (for: each _line, ...$lines)[(random: 0, 4)])
+(set: $randomX to (for: each _line, ...$lines)[(random: 0, 100)])  &lt;!-- X positions --&gt;
+(set: $randomDelays to (for: each _line, ...$lines)[(random: 0, 4)])  &lt;!-- Delays --&gt;
 
 &lt;!-- Loop through each line and create falling text --&gt;
 &lt;div id=&quot;falling-container&quot;&gt;
   (for: each _line, _index, ...$lines)[
-    &lt;!-- Set the random position and delay for each line --&gt;
     (set: _x to (either: $randomX[_index])) &lt;!-- X position --&gt;
     (set: _delay to (either: $randomDelays[_index])) &lt;!-- Delay --&gt;
-    
+
     &lt;!-- Create the falling-text span for each line --&gt;
-    &lt;span class=&quot;falling-text&quot; style=&quot;position: absolute; left: calc(10% + 80% * _x); animation-delay: _delay s;&quot;&gt;
+    &lt;span class=&quot;falling-text&quot; style=&quot;left: calc(10% + 80% * _x); animation-delay: _delay s;&quot;&gt;
       _line
     &lt;/span&gt;
   ]
-&lt;/div&gt;
-
-</tw-passagedata><tw-passagedata pid="13" name="Bile tainted with track changes" tags="" position="600,1100" size="100,100">[[next passage]]</tw-passagedata><tw-passagedata pid="14" name="a ring shaped mosquito bite greets you in the morning" tags="" position="600,1350" size="100,100"></tw-passagedata><tw-passagedata pid="15" name="falling line" tags="" position="725,975" size="100,100">(set: _text to _args[1])
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="Bile tainted with track changes" tags="" position="600,1100" size="100,100">[[next passage]]</tw-passagedata><tw-passagedata pid="14" name="a ring shaped mosquito bite greets you in the morning" tags="" position="600,1350" size="100,100"></tw-passagedata><tw-passagedata pid="15" name="falling line" tags="" position="725,975" size="100,100">(set: _text to _args[1])
 (set: _x to _args[2])
 (set: _delay to _args[3])
 
