@@ -342,10 +342,8 @@ tw-story[tags~="background3"] {
   width: 200px;
   opacity: 1;
   transition: transform 0.5s ease;
-  z-index: 10;
-  pointer-events: none;
-}
-</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="600,100" size="100,100">&lt;audio id=&quot;background-audio&quot; loop autoplay&gt;
+  z-index: 1;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="600,100" size="100,100">&lt;audio id=&quot;background-audio&quot; loop autoplay&gt;
   &lt;source src=&quot;audio/Space8-NalaSinephro.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
   Your browser does not support the audio element.
 &lt;/audio&gt;
@@ -538,21 +536,21 @@ The bedroom that could fit the water tank inside of it maybe,
 &lt;/span&gt;</tw-passagedata><tw-passagedata pid="16" name="messy table" tags="backgroundimage3" position="300,1125" size="100,100">&lt;!-- Define an array of image filenames --&gt;
 (set: $images to (array: &quot;letter.jpg&quot;, &quot;family.jpg&quot;, &quot;photo3.png&quot;, &quot;ticket.png&quot;, &quot;postcard.jpg&quot;))
 
-&lt;!-- Initialize an empty string for the collage --&gt;
+&lt;!-- Initialize a string variable to hold the image HTML --&gt;
 (set: $collage to &quot;&quot;)
 
-&lt;!-- Loop through each image in the array --&gt;
-(for: _i, 0, (array: $images) - 1)[
-    &lt;!-- Set random values for position and rotation --&gt;
-    (set: _x to (random: 0, 90))
-    (set: _y to (random: 0, 90))
-    (set: _r to (random: -30, 30))
+&lt;!-- Add a specific number of images (5 for now) with random positions and rotations --&gt;
+(for: _i, 1, 10)[
+  &lt;!-- Random position and rotation for each image --&gt;
+  (set: _top to (random: 0, 90))
+  (set: _left to (random: 0, 90))
+  (set: _rotation to (random: -30, 30))
 
-    &lt;!-- Add the image HTML with the random styles --&gt;
-    (set: $collage to $collage + &quot;&lt;img src=&#39;images/&quot; + (either: _i, $images) + &quot;&#39; class=&#39;scrap-img&#39; style=&#39;top:&quot; + _y + &quot;%; left:&quot; + _x + &quot;%; transform: rotate(&quot; + _r + &quot;deg);&#39;&gt;&quot;)
+  &lt;!-- Add the image HTML to the collage string --&gt;
+  (set: $collage to $collage + &quot;&lt;img src=&#39;images/&quot; + (either: _i, $images) + &quot;&#39; class=&#39;scrap-img&#39; style=&#39;top:&quot; + _top + &quot;%; left:&quot; + _left + &quot;%; transform: rotate(&quot; + _rotation + &quot;deg);&#39;&gt;&quot;)
 ]
 
-&lt;!-- Display the collage --&gt;
+&lt;!-- Display the collage of images --&gt;
 $collage
 </tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
