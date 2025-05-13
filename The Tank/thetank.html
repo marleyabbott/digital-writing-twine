@@ -338,12 +338,11 @@ tw-story[tags~="background3"] {
 }
 
 .scrap-img {
-  width: 150px; /* Adjust the size as needed */
-  opacity: 1;
-  transition: transform 0.5s ease;
-  z-index: 1;
-}
-</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="600,100" size="100,100">&lt;audio id=&quot;background-audio&quot; loop autoplay&gt;
+  position: absolute;
+  width: 150px;  /* Adjust image size as needed */
+  opacity: 0;  /* Start images as invisible */
+  transition: opacity 1s ease, transform 1s ease;  /* Smooth transition */
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="600,100" size="100,100">&lt;audio id=&quot;background-audio&quot; loop autoplay&gt;
   &lt;source src=&quot;audio/Space8-NalaSinephro.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
   Your browser does not support the audio element.
 &lt;/audio&gt;
@@ -533,16 +532,48 @@ The bedroom that could fit the water tank inside of it maybe,
 
 &lt;span class=&quot;falling-text&quot; style=&quot;--random-x: _x; animation-delay: _delay + s;&quot;&gt;
   _text
-&lt;/span&gt;</tw-passagedata><tw-passagedata pid="16" name="messy table" tags="backgroundimage3" position="300,1125" size="100,100">:: Start
-&lt;!-- Set up images manually with positions --&gt;
-(set: $image1 to &quot;&lt;img src=&#39;images/photo3.png&#39; class=&#39;scrap-img&#39; style=&#39;position:absolute; top:&quot; + (random: 0, 90) + &quot;%; left:&quot; + (random: 0, 90) + &quot;%; transform: rotate(&quot; + (random: -30, 30) + &quot;deg);&#39;&gt;&quot;)
-(set: $image2 to &quot;&lt;img src=&#39;images/ticket.png&#39; class=&#39;scrap-img&#39; style=&#39;position:absolute; top:&quot; + (random: 0, 90) + &quot;%; left:&quot; + (random: 0, 90) + &quot;%; transform: rotate(&quot; + (random: -30, 30) + &quot;deg);&#39;&gt;&quot;)
-(set: $image3 to &quot;&lt;img src=&#39;images/postcard.jpg&#39; class=&#39;scrap-img&#39; style=&#39;position:absolute; top:&quot; + (random: 0, 90) + &quot;%; left:&quot; + (random: 0, 90) + &quot;%; transform: rotate(&quot; + (random: -30, 30) + &quot;deg);&#39;&gt;&quot;)
+&lt;/span&gt;</tw-passagedata><tw-passagedata pid="16" name="messy table" tags="backgroundimage3" position="300,1125" size="100,100">// Array of images to display
+var images = [&quot;letter.jpg&quot;, &quot;family.jpg&quot;, &quot;ticket.png&quot;, &quot;photo3.png&quot;, &quot;postcard.jpg&quot;];
+var currentIndex = 0;
 
-&lt;!-- Display the images --&gt;
-$image1
-$image2
-$image3</tw-passagedata></tw-storydata>
+// Function to show images one by one
+function showImage() {
+  if (currentIndex &lt; images.length) {
+    // Create a new image element
+    var img = document.createElement(&#39;img&#39;);
+    img.src = &#39;images/&#39; + images[currentIndex];
+    img.className = &#39;scrap-img&#39;;
+    
+    // Set random positions and rotations for the images
+    var top = Math.random() * 600 + &#39;px&#39;; // Adjust the max value for vertical space
+    var left = Math.random() * 800 + &#39;px&#39;; // Adjust the max value for horizontal space
+    var rotation = Math.random() * 360 + &#39;deg&#39;;
+    
+    img.style.top = top;
+    img.style.left = left;
+    img.style.transform = &#39;rotate(&#39; + rotation + &#39;)&#39;;
+    
+    // Append the image to the body of the page
+    document.body.appendChild(img);
+    
+    // Fade the image in by changing opacity
+    setTimeout(function() {
+      img.style.opacity = 1;
+    }, 100);
+    
+    // Move to the next image
+    currentIndex++;
+    
+    // Call the function again to add the next image
+    setTimeout(showImage, 500); // 500ms delay between images
+  }
+}
+
+// Start the process when the page loads
+window.onload = function() {
+  showImage(); // Begin showing images
+};
+</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
