@@ -333,42 +333,39 @@ tw-story[tags~="background2"] {
   text-decoration: underline !important;  /* Underline on hover */
 }
 
-/* Set a clean background for the whole page */
+/* Remove default background */
 tw-story {
-  background: none;  /* Remove any default background */
-  background-color: transparent;  /* Ensure no background color */
-  z-index: 1; /* Make sure your images are placed above the background */
+  background: none;
+  background-color: transparent;  /* Ensure no default color */
+  position: relative; /* Keep content positioned correctly */
+  z-index: 1; /* Ensure content is in front */
 }
 
-/* Apply background image to passages with background3 tag */
+/* Apply background only if the passage has 'background3' tag */
 tw-story[tags~="background3"] {
-  background-image: url('images/tablecloth.jpg');  /* Path to your image */
-  background-size: cover;  /* Ensure background image covers the entire screen */
-  background-position: center center;  /* Keep it centered */
-  background-attachment: fixed;  /* Keep it fixed during scroll */
-  width: 100vw;  /* Full width of viewport */
-  height: 100vh;  /* Full height of viewport */
-  position: fixed;  /* Keep it fixed behind the content */
+  background-image: url('images/tablecloth.jpg');  /* Replace with the correct image path */
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  width: 100%; /* Ensure it covers the entire screen width */
+  height: 100vh;  /* Full viewport height */
+  position: fixed;  /* Ensure background stays in place during scroll */
   top: 0;
   left: 0;
-  z-index: -1;  /* Ensure background stays behind content */
+  z-index: -1; /* Ensure background is behind the content */
 }
 
-/* Collage image styling */
+/* Collage of images */
 .scrap-img {
   position: absolute;
-  width: 150px;  /* Adjust image size */
-  opacity: 0;  /* Start images as invisible */
-  transition: opacity 1s ease, transform 1s ease;  /* Smooth transition */
-  z-index: 0;  /* Ensure these images are above the background */
+  width: 150px;  /* Adjust based on your design */
+  opacity: 0;  /* Start with invisible images */
+  transition: opacity 1s ease, transform 1s ease;
+  z-index: 0;  /* Ensure images are in front of background */
 }
 
-/* Apply the collage image effects when the images are revealed */
-#falling-container .scrap-img {
-  animation: rotateAndMove 10s linear infinite;  /* Example animation */
-}
-
-/* Animation for rotating and moving images */
+/* Animation for the collage images */
 @keyframes rotateAndMove {
   0% {
     transform: rotate(0deg) translateY(0);
@@ -380,19 +377,16 @@ tw-story[tags~="background3"] {
   }
 }
 
-/* Adjust your other dynamic image-related styling */
-.story-image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  max-height: 200px;  /* Limit height if necessary */
+#falling-container .scrap-img {
+  animation: rotateAndMove 10s linear infinite;
 }
 
-/* Additional cleanup to make sure the text is not obstructed by images */
+/* Optional: Text style */
 tw-story {
+  padding: 20px; /* Add some padding to text */
+  color: white;  /* Ensure text is visible against background */
   position: relative;
-  z-index: 1;  /* Ensure text stays above the images */
-  padding: 20px;
+  z-index: 1;  /* Keep text above background */
 }
 </style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="600,100" size="100,100">&lt;audio id=&quot;background-audio&quot; loop autoplay&gt;
   &lt;source src=&quot;audio/Space8-NalaSinephro.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
