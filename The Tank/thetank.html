@@ -318,8 +318,7 @@ tw-story[tags~="background2"] {
     top: 100vh;
     opacity: 0;
   }
-}
-</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="600,100" size="100,100">&lt;audio id=&quot;background-audio&quot; loop autoplay&gt;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="600,100" size="100,100">&lt;audio id=&quot;background-audio&quot; loop autoplay&gt;
   &lt;source src=&quot;audio/Space8-NalaSinephro.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
   Your browser does not support the audio element.
 &lt;/audio&gt;
@@ -483,11 +482,7 @@ The bedroom that could fit the water tank inside of it maybe,
     &lt;p class=&quot;line line-5&quot;&gt;The sun reaches into the story through the splinters. The peeling paint. The half-laid kitchen tile causing depressions in the floor.&lt;/p&gt;
     &lt;p class=&quot;line line-6&quot;&gt;The tile trailing off, somewhere we are supposed to walk.&lt;/p&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="arrive in calabria" tags="background2" position="600,975" size="100,100">&lt;!-- Precompute random X positions and delays for each line --&gt;
-(set: $randomX to (array: (random: 0, 100), (random: 0, 100), (random: 0, 100), (random: 0, 100), (random: 0, 100), (random: 0, 100), (random: 0, 100), (random: 0, 100)))
-(set: $randomDelays to (array: (random: 0, 4), (random: 0, 4), (random: 0, 4), (random: 0, 4), (random: 0, 4), (random: 0, 4), (random: 0, 4), (random: 0, 4)))
-
-&lt;!-- Define the lines of text --&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="arrive in calabria" tags="background2" position="600,975" size="100,100">&lt;!-- Define the lines of text --&gt;
 (set: $lines to [
   &quot;On the first night there is vomit.&quot;,
   &quot;Before the vomit she talks at you in the language you have pretended to understand...&quot;,
@@ -501,19 +496,42 @@ The bedroom that could fit the water tank inside of it maybe,
 ])
 
 &lt;!-- Create the falling-text container --&gt;
-&lt;div id=&quot;falling-container&quot;&gt;
-  &lt;!-- Loop through each line and manually index --&gt;
-  (for: each _line, _index, ...$lines)[
-    &lt;!-- Get random X position and delay for each line --&gt;
-    (set: _x to $randomX[_index])
-    (set: _delay to $randomDelays[_index])
-    
-    &lt;!-- Create the falling-text span for each line --&gt;
-    &lt;span class=&quot;falling-text&quot; style=&quot;left: calc(10% + 80% * _x); animation-delay: _delay s;&quot;&gt;
-      _line
-    &lt;/span&gt;
-  ]
-&lt;/div&gt;
+&lt;div id=&quot;falling-container&quot;&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  // Get the lines of text
+  var lines = [&#39;On the first night there is vomit.&#39;,
+    &#39;Before the vomit she talks at you in the language you have pretended to understand...&#39;,
+    &#39;The couch is made of wooden pellets, covered in thin foam.&#39;,
+    &#39;Before talk there is sugo and melone and formaggio...&#39;,
+    &#39;You decline. You retract. You are drunk.&#39;,
+    &#39;A woman working in the bar corrects your sentences.&#39;,
+    &#39;You repeat after her. Swirl the words around your mouth...&#39;,
+    &#39;Chew on them, swallow, but they come rising back up.&#39;,
+    &quot;&#39;&#39;Bile tainted with track changes&#39;&#39;&quot;
+  ];
+
+  // Container for random positions and delays
+  var randomX = [];
+  var randomDelays = [];
+
+  // Generate random positions and delays
+  for (var i = 0; i &lt; lines.length; i++) {
+    randomX.push(Math.random() * 100);  // Random X between 0 and 100%
+    randomDelays.push(Math.random() * 4); // Random delay between 0 and 4s
+  }
+
+  // Append lines of text with random X positions and delays
+  var container = document.getElementById(&#39;falling-container&#39;);
+  for (var i = 0; i &lt; lines.length; i++) {
+    var span = document.createElement(&#39;span&#39;);
+    span.classList.add(&#39;falling-text&#39;);
+    span.innerText = lines[i];
+    span.style.left = `calc(10% + ${randomX[i]}%)`;
+    span.style.animationDelay = `${randomDelays[i]}s`;
+    container.appendChild(span);
+  }
+&lt;/script&gt;
 </tw-passagedata><tw-passagedata pid="13" name="Bile tainted with track changes" tags="" position="600,1100" size="100,100">[[next passage]]</tw-passagedata><tw-passagedata pid="14" name="a ring shaped mosquito bite greets you in the morning" tags="" position="600,1350" size="100,100"></tw-passagedata><tw-passagedata pid="15" name="falling line" tags="" position="725,975" size="100,100">(set: _text to _args[1])
 (set: _x to _args[2])
 (set: _delay to _args[3])
