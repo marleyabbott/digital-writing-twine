@@ -301,11 +301,13 @@ tw-story[tags~="background2"] {
 
 .falling-text {
   position: absolute;
-  font-size: 16px;
+  font-size: 20px; /* Adjust font size for readability */
+  line-height: 1.5;
   color: white;
   opacity: 0;
-  animation: fall 60s infinite; /* Slower fall speed */
-  white-space: nowrap;
+  animation: fall 120s infinite; /* Slow the falling speed even more */
+  white-space: normal; /* Allow wrapping of text */
+  padding: 10px; /* Add padding for some space around the text */
 }
 
 @keyframes fall {
@@ -313,8 +315,14 @@ tw-story[tags~="background2"] {
     top: -100px;
     opacity: 0;
   }
+  25% {
+    opacity: 0.5;
+  }
   50% {
     opacity: 1;
+  }
+  75% {
+    opacity: 0.5;
   }
   100% {
     top: 100vh;
@@ -494,6 +502,7 @@ The bedroom that could fit the water tank inside of it maybe,
     $fallingText
   &lt;/span&gt;
 &lt;/div&gt;
+
 
 &lt;script&gt;
   // Get the lines of text
