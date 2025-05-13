@@ -336,15 +336,14 @@ tw-story[tags~="background2"] {
 tw-story[tags~="background3"] {
   background: url('images/tablecloth.jpg') center center / cover no-repeat fixed;
 }
+
 .scrap-img {
   position: absolute;
   width: 200px;
   transition: opacity 0.5s ease, transform 0.5s ease;
   opacity: 1;
-  z-index: 1;
   pointer-events: none;
-}
-</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="600,100" size="100,100">&lt;audio id=&quot;background-audio&quot; loop autoplay&gt;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="600,100" size="100,100">&lt;audio id=&quot;background-audio&quot; loop autoplay&gt;
   &lt;source src=&quot;audio/Space8-NalaSinephro.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
   Your browser does not support the audio element.
 &lt;/audio&gt;
@@ -534,13 +533,13 @@ The bedroom that could fit the water tank inside of it maybe,
 
 &lt;span class=&quot;falling-text&quot; style=&quot;--random-x: _x; animation-delay: _delay + s;&quot;&gt;
   _text
-&lt;/span&gt;</tw-passagedata><tw-passagedata pid="16" name="messy table" tags="backgroundimage3" position="300,1125" size="100,100">(set: $imageList to (a: &quot;letter.jpg&quot;, &quot;family.jpg&quot;, &quot;photo3.png&quot;))
+&lt;/span&gt;</tw-passagedata><tw-passagedata pid="16" name="messy table" tags="backgroundimage3" position="300,1125" size="100,100">(set: $imageList to (a: &quot;letter.jpg&quot;, &quot;family.jpg&quot;, &quot;photo3.png&quot;, &quot;ticket.png&quot;, &quot;postcard.jpg&quot;))
 (set: $scrapbook to (a:))
 
-(live: 1s)[
+(live: 0.5s)[
   (if: $imageList&#39;s length &gt; 0)[
     (set: _newImg to $imageList&#39;s 1st)
-    (set: $imageList to $imageList&#39;s tail)
+    (set: $imageList to $imageList&#39;s 2ndToLast)
     (set: $scrapbook to it + (a: _newImg))
   ]
 ]
@@ -549,8 +548,9 @@ The bedroom that could fit the water tank inside of it maybe,
   (set: _x to (random: 0, 80))
   (set: _y to (random: 0, 80))
   (set: _r to (random: -30, 30))
-  &lt;img src=&quot;images/[_img]&quot; class=&quot;scrap-img&quot; style=&quot;position:absolute; width:200px; top:[_y]%; left:[_x]%; transform: rotate([_r]deg);&quot;&gt;
-]</tw-passagedata></tw-storydata>
+  &lt;img src=&quot;images/[_img]&quot; class=&quot;scrap-img&quot; style=&quot;top:[_y]%; left:[_x]%; transform: rotate([_r]deg); z-index:(_index);&quot;&gt;
+]
+</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
